@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,10 +13,45 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHn-t1-6vX">
+                                <rect key="frame" x="135" y="398.5" width="144" height="99"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dumbbel" translatesAutoresizingMaskIntoConstraints="NO" id="ia1-uF-dSX">
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="58"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="58" id="aCk-Ex-Sfz"/>
+                                            <constraint firstAttribute="width" constant="144" id="t0V-IU-f5v"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Be Health" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9h-fl-EY2">
+                                        <rect key="frame" x="0.0" y="78" width="144" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="i9h-fl-EY2" secondAttribute="trailing" id="5GM-z9-K63"/>
+                                    <constraint firstItem="ia1-uF-dSX" firstAttribute="top" secondItem="HHn-t1-6vX" secondAttribute="top" id="EGh-OU-iqb"/>
+                                    <constraint firstAttribute="bottom" secondItem="i9h-fl-EY2" secondAttribute="bottom" id="GOU-AN-BbC"/>
+                                    <constraint firstAttribute="trailing" secondItem="ia1-uF-dSX" secondAttribute="trailing" id="L8j-kG-VIB"/>
+                                    <constraint firstItem="ia1-uF-dSX" firstAttribute="leading" secondItem="HHn-t1-6vX" secondAttribute="leading" id="VEo-H4-y5Q"/>
+                                    <constraint firstItem="i9h-fl-EY2" firstAttribute="leading" secondItem="HHn-t1-6vX" secondAttribute="leading" id="XEM-VT-soP"/>
+                                    <constraint firstItem="i9h-fl-EY2" firstAttribute="top" secondItem="ia1-uF-dSX" secondAttribute="bottom" constant="20" id="pYc-0O-YHH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="Gray900"/>
+                        <constraints>
+                            <constraint firstItem="HHn-t1-6vX" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Jb0-e6-8wt"/>
+                            <constraint firstItem="HHn-t1-6vX" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zwQ-vg-SgM"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -22,4 +59,10 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dumbbel" width="144" height="58"/>
+        <namedColor name="Gray900">
+            <color red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
