@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		FB43404126679E8500F5D76E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43404026679E8500F5D76E /* AppDelegate.swift */; };
 		FB43404326679E8500F5D76E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43404226679E8500F5D76E /* SceneDelegate.swift */; };
-		FB43404526679E8500F5D76E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43404426679E8500F5D76E /* ViewController.swift */; };
+		FB43404526679E8500F5D76E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43404426679E8500F5D76E /* HomeViewController.swift */; };
 		FB43404826679E8500F5D76E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB43404626679E8500F5D76E /* Main.storyboard */; };
 		FB43404B26679E8500F5D76E /* FitnessApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB43404926679E8500F5D76E /* FitnessApp.xcdatamodeld */; };
 		FB43404D26679E8700F5D76E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB43404C26679E8700F5D76E /* Assets.xcassets */; };
@@ -19,6 +19,10 @@
 		FB4340752667A2A200F5D76E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB4340742667A2A200F5D76E /* Images.xcassets */; };
 		FB4340772667A2AB00F5D76E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB4340762667A2AB00F5D76E /* Colors.xcassets */; };
 		FB43407A2667B91D00F5D76E /* UIView+layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4340792667B91D00F5D76E /* UIView+layer.swift */; };
+		FB43407E2669032600F5D76E /* MakingRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43407C2669032600F5D76E /* MakingRoutineViewController.swift */; };
+		FB43407F2669032600F5D76E /* MakingRoutineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB43407D2669032600F5D76E /* MakingRoutineViewController.xib */; };
+		FB434082266903AD00F5D76E /* MakingTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB434081266903AD00F5D76E /* MakingTitleView.swift */; };
+		FB434084266903D900F5D76E /* MakingTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB434083266903D900F5D76E /* MakingTitleView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +46,7 @@
 		FB43403D26679E8500F5D76E /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB43404026679E8500F5D76E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB43404226679E8500F5D76E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FB43404426679E8500F5D76E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FB43404426679E8500F5D76E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FB43404726679E8500F5D76E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB43404A26679E8500F5D76E /* FitnessApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FitnessApp.xcdatamodel; sourceTree = "<group>"; };
 		FB43404C26679E8700F5D76E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,6 +61,10 @@
 		FB4340742667A2A200F5D76E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FB4340762667A2AB00F5D76E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		FB4340792667B91D00F5D76E /* UIView+layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+layer.swift"; sourceTree = "<group>"; };
+		FB43407C2669032600F5D76E /* MakingRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakingRoutineViewController.swift; sourceTree = "<group>"; };
+		FB43407D2669032600F5D76E /* MakingRoutineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MakingRoutineViewController.xib; sourceTree = "<group>"; };
+		FB434081266903AD00F5D76E /* MakingTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakingTitleView.swift; sourceTree = "<group>"; };
+		FB434083266903D900F5D76E /* MakingTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MakingTitleView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,11 +115,12 @@
 		FB43403F26679E8500F5D76E /* FitnessApp */ = {
 			isa = PBXGroup;
 			children = (
+				FB43407B266902D500F5D76E /* MakingRoutine */,
 				FB4340782667B90300F5D76E /* Extension */,
 				FB4340732667A28D00F5D76E /* Resource */,
 				FB43404026679E8500F5D76E /* AppDelegate.swift */,
 				FB43404226679E8500F5D76E /* SceneDelegate.swift */,
-				FB43404426679E8500F5D76E /* ViewController.swift */,
+				FB43404426679E8500F5D76E /* HomeViewController.swift */,
 				FB43404626679E8500F5D76E /* Main.storyboard */,
 				FB43404C26679E8700F5D76E /* Assets.xcassets */,
 				FB43404E26679E8700F5D76E /* LaunchScreen.storyboard */,
@@ -154,6 +163,25 @@
 				FB4340792667B91D00F5D76E /* UIView+layer.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		FB43407B266902D500F5D76E /* MakingRoutine */ = {
+			isa = PBXGroup;
+			children = (
+				FB4340802669033F00F5D76E /* MakingTitle */,
+				FB43407C2669032600F5D76E /* MakingRoutineViewController.swift */,
+				FB43407D2669032600F5D76E /* MakingRoutineViewController.xib */,
+			);
+			path = MakingRoutine;
+			sourceTree = "<group>";
+		};
+		FB4340802669033F00F5D76E /* MakingTitle */ = {
+			isa = PBXGroup;
+			children = (
+				FB434081266903AD00F5D76E /* MakingTitleView.swift */,
+				FB434083266903D900F5D76E /* MakingTitleView.xib */,
+			);
+			path = MakingTitle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,9 +288,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB4340772667A2AB00F5D76E /* Colors.xcassets in Resources */,
+				FB434084266903D900F5D76E /* MakingTitleView.xib in Resources */,
 				FB43405026679E8700F5D76E /* LaunchScreen.storyboard in Resources */,
 				FB4340752667A2A200F5D76E /* Images.xcassets in Resources */,
 				FB43404D26679E8700F5D76E /* Assets.xcassets in Resources */,
+				FB43407F2669032600F5D76E /* MakingRoutineViewController.xib in Resources */,
 				FB43404826679E8500F5D76E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,9 +319,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB43404B26679E8500F5D76E /* FitnessApp.xcdatamodeld in Sources */,
-				FB43404526679E8500F5D76E /* ViewController.swift in Sources */,
+				FB434082266903AD00F5D76E /* MakingTitleView.swift in Sources */,
+				FB43404526679E8500F5D76E /* HomeViewController.swift in Sources */,
 				FB43404126679E8500F5D76E /* AppDelegate.swift in Sources */,
 				FB43407A2667B91D00F5D76E /* UIView+layer.swift in Sources */,
+				FB43407E2669032600F5D76E /* MakingRoutineViewController.swift in Sources */,
 				FB43404326679E8500F5D76E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,7 +430,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -453,7 +485,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
