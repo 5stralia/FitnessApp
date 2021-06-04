@@ -9,14 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MakingTitleView" customModule="FitnessApp" customModuleProvider="target">
-            <connections>
-                <outlet property="textCountLabel" destination="rcz-7i-jup" id="qTZ-0d-SYW"/>
-                <outlet property="titleTextField" destination="9xF-EY-5mg" id="qiD-DF-m2S"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MakingTitleView" customModule="FitnessApp" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MakingTitleView" customModule="FitnessApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -42,7 +37,10 @@
                                     <rect key="frame" x="0.0" y="62.5" width="273" height="25.5"/>
                                     <color key="textColor" name="Gray600"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="iN0-l3-epB" id="vdG-S0-NiY"/>
+                                    </connections>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FMb-RQ-BDU">
                                     <rect key="frame" x="0.0" y="92" width="334" height="1"/>
@@ -118,6 +116,10 @@
                 <constraint firstItem="bdu-3s-kNA" firstAttribute="top" secondItem="QJJ-0T-r4H" secondAttribute="bottom" id="cuE-dW-wrA"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="textCountLabel" destination="rcz-7i-jup" id="BWM-VT-P28"/>
+                <outlet property="titleTextField" destination="9xF-EY-5mg" id="u8f-aF-2fZ"/>
+            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="152.67857142857142"/>
         </view>
     </objects>

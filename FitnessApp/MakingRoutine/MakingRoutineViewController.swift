@@ -8,22 +8,27 @@
 import UIKit
 
 class MakingRoutineViewController: UIViewController {
-
+    @IBOutlet weak var progressBarView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var progressBarHeightConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.scrollView.frameLayoutGuide.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+        
+        let makingTitleView = MakingTitleView.MakingTitleView()
+        self.scrollView.addSubview(makingTitleView)
+        makingTitleView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.scrollView.leadingAnchor.constraint(equalTo: makingTitleView.leadingAnchor),
+            self.scrollView.topAnchor.constraint(equalTo: makingTitleView.topAnchor),
+            self.scrollView.trailingAnchor.constraint(equalTo: makingTitleView.trailingAnchor),
+            self.scrollView.bottomAnchor.constraint(equalTo: makingTitleView.bottomAnchor),
+            makingTitleView.heightAnchor.constraint(equalTo: self.scrollView.heightAnchor),
+            makingTitleView.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor)
+        ])
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

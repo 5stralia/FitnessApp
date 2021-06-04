@@ -15,16 +15,19 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var todayDescriptionLabel: UILabel!
     
     @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
 
     @IBAction func tappedStartFitnessButton(_ sender: Any) {
+        let makingRoutineViewController = MakingRoutineViewController()
+        self.navigationController?.pushViewController(makingRoutineViewController, animated: true)
     }
     
     @IBAction func tappedViewRecodingButton(_ sender: Any) {
     }
+    
 }
 
