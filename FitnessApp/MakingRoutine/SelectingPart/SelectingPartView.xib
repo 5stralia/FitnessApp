@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectingPartView" customModule="FitnessApp" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SelectingPartView" customModule="FitnessApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3oy-78-QoX">
+                    <rect key="frame" x="40" y="355" width="334" height="186.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ys-lj-Cqa">
+                            <rect key="frame" x="0.0" y="0.0" width="23.5" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" name="Gray600"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="운동할 부위를 선택하여 사이클을 계획해보세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xo9-QR-Xmh">
+                            <rect key="frame" x="0.0" y="32" width="225" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" name="Gray400"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PersonPartition" translatesAutoresizingMaskIntoConstraints="NO" id="Svr-aZ-ISq">
+                            <rect key="frame" x="15" y="63.5" width="101" height="110"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="110" id="7et-ZA-2uT"/>
+                                <constraint firstAttribute="width" constant="101" id="IlF-DZ-Vo8"/>
+                            </constraints>
+                        </imageView>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="wd7-Ge-51w">
+                            <rect key="frame" x="151" y="76.5" width="173" height="110"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="110" id="rpI-zi-2BZ"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="K6f-zZ-U4V">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Svr-aZ-ISq" firstAttribute="top" secondItem="xo9-QR-Xmh" secondAttribute="bottom" constant="17" id="1yw-Io-wJv"/>
+                        <constraint firstAttribute="bottom" secondItem="wd7-Ge-51w" secondAttribute="bottom" id="Du5-JP-hvJ"/>
+                        <constraint firstItem="2ys-lj-Cqa" firstAttribute="leading" secondItem="3oy-78-QoX" secondAttribute="leading" id="F3P-VX-gfI"/>
+                        <constraint firstItem="wd7-Ge-51w" firstAttribute="top" secondItem="xo9-QR-Xmh" secondAttribute="bottom" constant="30" id="GwV-XJ-oM6"/>
+                        <constraint firstItem="xo9-QR-Xmh" firstAttribute="leading" secondItem="3oy-78-QoX" secondAttribute="leading" id="I4C-Sz-dCV"/>
+                        <constraint firstItem="2ys-lj-Cqa" firstAttribute="top" secondItem="3oy-78-QoX" secondAttribute="top" id="J0c-GF-YWW"/>
+                        <constraint firstItem="xo9-QR-Xmh" firstAttribute="top" secondItem="2ys-lj-Cqa" secondAttribute="bottom" constant="8" id="QBf-AE-pCC"/>
+                        <constraint firstItem="Svr-aZ-ISq" firstAttribute="leading" secondItem="3oy-78-QoX" secondAttribute="leading" constant="15" id="ZqY-oT-XsO"/>
+                        <constraint firstAttribute="trailing" secondItem="wd7-Ge-51w" secondAttribute="trailing" constant="10" id="g9Q-x3-XWI"/>
+                        <constraint firstItem="wd7-Ge-51w" firstAttribute="leading" secondItem="Svr-aZ-ISq" secondAttribute="trailing" constant="35" id="x57-h3-oZi"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="3oy-78-QoX" secondAttribute="trailing" constant="40" id="KM9-Vc-Mbf"/>
+                <constraint firstItem="3oy-78-QoX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="ny6-yD-XBL"/>
+                <constraint firstItem="3oy-78-QoX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ptF-4p-o9J"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="131.8840579710145" y="94.419642857142847"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="PersonPartition" width="105.5" height="114.5"/>
+        <namedColor name="Gray400">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Gray600">
+            <color red="0.38823529411764707" green="0.38823529411764707" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

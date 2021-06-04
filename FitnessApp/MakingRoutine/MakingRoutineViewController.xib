@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="progressBarHeightConstraint" destination="fQb-Lw-aGi" id="I4C-bR-dqc"/>
                 <outlet property="progressBarView" destination="196-2v-Y0f" id="vi6-Yc-xjy"/>
+                <outlet property="progressBarWidthConstraint" destination="ad6-Wv-kEp" id="ypc-r7-2Wp"/>
                 <outlet property="scrollView" destination="jZd-jH-p7Q" id="Wj7-Pi-IyM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -86,18 +87,39 @@
                         <constraint firstItem="tfA-gC-ugV" firstAttribute="leading" secondItem="196-2v-Y0f" secondAttribute="leading" constant="35" id="kBy-j5-Toa"/>
                     </constraints>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZd-jH-p7Q">
-                    <rect key="frame" x="0.0" y="60" width="414" height="802"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZd-jH-p7Q">
+                    <rect key="frame" x="0.0" y="60" width="414" height="756"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="q9d-5R-rCi"/>
+                    </connections>
                 </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rP0-Ho-y8P">
+                    <rect key="frame" x="0.0" y="816" width="414" height="80"/>
+                    <color key="backgroundColor" name="Gray900"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="KE6-Tm-05V"/>
+                        <constraint firstAttribute="height" constant="80" id="nMk-hi-SeL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="다음">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="tappedNextButton:" destination="-1" eventType="touchUpInside" id="QKc-0F-9U5"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jZd-jH-p7Q" secondAttribute="trailing" id="49R-E6-rOz"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jZd-jH-p7Q" secondAttribute="bottom" id="ChJ-Jx-HdS"/>
+                <constraint firstAttribute="bottom" secondItem="rP0-Ho-y8P" secondAttribute="bottom" id="Iev-XU-dHX"/>
+                <constraint firstItem="rP0-Ho-y8P" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="NI6-KE-5ND"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="196-2v-Y0f" secondAttribute="trailing" id="Rj3-Pj-Aak"/>
                 <constraint firstItem="jZd-jH-p7Q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TlG-71-id5"/>
                 <constraint firstItem="196-2v-Y0f" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UEs-lK-LuV"/>
+                <constraint firstItem="rP0-Ho-y8P" firstAttribute="top" secondItem="jZd-jH-p7Q" secondAttribute="bottom" id="Uz4-QO-kcp"/>
+                <constraint firstAttribute="trailing" secondItem="rP0-Ho-y8P" secondAttribute="trailing" id="Z12-jr-c26"/>
                 <constraint firstItem="jZd-jH-p7Q" firstAttribute="top" secondItem="196-2v-Y0f" secondAttribute="bottom" id="cBT-0d-64V"/>
                 <constraint firstItem="196-2v-Y0f" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gf4-Ga-S4I"/>
             </constraints>
@@ -112,6 +134,9 @@
         </namedColor>
         <namedColor name="Gray600">
             <color red="0.38823529411764707" green="0.38823529411764707" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Gray900">
+            <color red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

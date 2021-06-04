@@ -23,6 +23,9 @@
 		FB43407F2669032600F5D76E /* MakingRoutineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB43407D2669032600F5D76E /* MakingRoutineViewController.xib */; };
 		FB434082266903AD00F5D76E /* MakingTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB434081266903AD00F5D76E /* MakingTitleView.swift */; };
 		FB434084266903D900F5D76E /* MakingTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB434083266903D900F5D76E /* MakingTitleView.xib */; };
+		FB434087266A73C800F5D76E /* SelectingPartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB434086266A73C800F5D76E /* SelectingPartView.swift */; };
+		FB434089266A73D200F5D76E /* SelectingPartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB434088266A73D200F5D76E /* SelectingPartView.xib */; };
+		FB43408B266A765200F5D76E /* MakingRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43408A266A765200F5D76E /* MakingRoutineViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		FB43407D2669032600F5D76E /* MakingRoutineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MakingRoutineViewController.xib; sourceTree = "<group>"; };
 		FB434081266903AD00F5D76E /* MakingTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakingTitleView.swift; sourceTree = "<group>"; };
 		FB434083266903D900F5D76E /* MakingTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MakingTitleView.xib; sourceTree = "<group>"; };
+		FB434086266A73C800F5D76E /* SelectingPartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectingPartView.swift; sourceTree = "<group>"; };
+		FB434088266A73D200F5D76E /* SelectingPartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectingPartView.xib; sourceTree = "<group>"; };
+		FB43408A266A765200F5D76E /* MakingRoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakingRoutineViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +174,9 @@
 		FB43407B266902D500F5D76E /* MakingRoutine */ = {
 			isa = PBXGroup;
 			children = (
+				FB434085266A737400F5D76E /* SelectingPart */,
 				FB4340802669033F00F5D76E /* MakingTitle */,
+				FB43408A266A765200F5D76E /* MakingRoutineViewModel.swift */,
 				FB43407C2669032600F5D76E /* MakingRoutineViewController.swift */,
 				FB43407D2669032600F5D76E /* MakingRoutineViewController.xib */,
 			);
@@ -182,6 +190,15 @@
 				FB434083266903D900F5D76E /* MakingTitleView.xib */,
 			);
 			path = MakingTitle;
+			sourceTree = "<group>";
+		};
+		FB434085266A737400F5D76E /* SelectingPart */ = {
+			isa = PBXGroup;
+			children = (
+				FB434086266A73C800F5D76E /* SelectingPartView.swift */,
+				FB434088266A73D200F5D76E /* SelectingPartView.xib */,
+			);
+			path = SelectingPart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +310,7 @@
 				FB4340752667A2A200F5D76E /* Images.xcassets in Resources */,
 				FB43404D26679E8700F5D76E /* Assets.xcassets in Resources */,
 				FB43407F2669032600F5D76E /* MakingRoutineViewController.xib in Resources */,
+				FB434089266A73D200F5D76E /* SelectingPartView.xib in Resources */,
 				FB43404826679E8500F5D76E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +338,8 @@
 			files = (
 				FB43404B26679E8500F5D76E /* FitnessApp.xcdatamodeld in Sources */,
 				FB434082266903AD00F5D76E /* MakingTitleView.swift in Sources */,
+				FB434087266A73C800F5D76E /* SelectingPartView.swift in Sources */,
+				FB43408B266A765200F5D76E /* MakingRoutineViewModel.swift in Sources */,
 				FB43404526679E8500F5D76E /* HomeViewController.swift in Sources */,
 				FB43404126679E8500F5D76E /* AppDelegate.swift in Sources */,
 				FB43407A2667B91D00F5D76E /* UIView+layer.swift in Sources */,

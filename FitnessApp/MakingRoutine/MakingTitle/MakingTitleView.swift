@@ -11,11 +11,10 @@ final class MakingTitleView: UIView {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var textCountLabel: UILabel!
     
+    var viewModel: MakingRoutineViewModel?
+    
     class func MakingTitleView() -> MakingTitleView {
         return Bundle.main.loadNibNamed("MakingTitleView", owner: nil)!.first as! MakingTitleView
-    }
-
-    @IBAction func tappedNextButton(_ sender: Any) {
     }
 }
 

@@ -23,6 +23,8 @@ class HomeViewController: UIViewController {
 
     @IBAction func tappedStartFitnessButton(_ sender: Any) {
         let makingRoutineViewController = MakingRoutineViewController()
+        let makingRoutineViewModel = MakingRoutineViewModel()
+        makingRoutineViewController.viewModel = makingRoutineViewModel
         self.navigationController?.pushViewController(makingRoutineViewController, animated: true)
     }
     
