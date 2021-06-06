@@ -21,6 +21,7 @@ class RoutinePartCell: UICollectionViewCell {
     }
     
     var routineIndex: Int?
+    var routine: Routine?
     
     private let cellIndentifier = "RoutineItemCell"
     
@@ -49,7 +50,10 @@ extension RoutinePartCell: UICollectionViewDataSource {
         
         if let routineIndex = self.routineIndex,
            let item = self.viewModel?.routines[routineIndex].items[indexPath.row] {
-            cell.set(title: item.title)
+            cell.set(title: item.title, count: item.count)
+            cell.viewModel = self.viewModel
+            cell.routineIndex = self.routineIndex
+            cell.routineItemIndex = indexPath.row
         }
         
         return cell

@@ -13,19 +13,26 @@ class RoutineItemCell: UICollectionViewCell {
     
     var viewModel: MakingRoutineViewModel?
     
-    private var count = 3
+    var routineIndex: Int?
+    var routineItemIndex: Int?
     
-    func set(title: String) {
+    func set(title: String, count: Int) {
         self.titleLabel.text = title
+        self.countLabel.text = String(count)
     }
     
     @IBAction func tappedMinusButton(_ sender: Any) {
-        self.count -= 1
-        self.countLabel.text = String(self.count)
+        if let routineIndex = self.routineIndex,
+           let itemIndex = self.routineItemIndex {
+            self.viewModel?.subCount(routineIndex: routineIndex, itemIndex: itemIndex)
+        }
+        
     }
     
     @IBAction func tappedPlusButton(_ sender: Any) {
-        self.count += 1
-        self.countLabel.text = String(self.count)
+        if let routineIndex = self.routineIndex,
+           let itemIndex = self.routineItemIndex {
+            self.viewModel?.addCount(routineIndex: routineIndex, itemIndex: itemIndex)
+        }
     }
 }

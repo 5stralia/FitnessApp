@@ -10,6 +10,7 @@ import Foundation
 final class MakingRoutineViewModel {
     var showPage: ((Int) -> Void)?
     var back: (() -> Void)?
+    var didMakeRoutine: ((_ routines: [Routine]) -> Void)?
     var didUpdateTitle: ((_ title: String) -> Void)?
     var didUpdateSelectedParts: (() -> Void)?
     var didUpdateRoutines: (() -> Void)?
@@ -29,10 +30,6 @@ final class MakingRoutineViewModel {
     
     var selectedParts: [Int] = [] {
         didSet {
-//            self.routines = selectedParts.map {
-//                Routine(titie: self.parts[$0], items: [RoutineItem(title: "추", count: 3)])
-//            }
-            
             self.didUpdateSelectedParts?()
         }
     }
@@ -44,7 +41,7 @@ final class MakingRoutineViewModel {
         let nextPage = self.currentPage + 1
         
         if nextPage > lastPage {
-            print("마지막 페이지!!")
+            self.didMakeRoutine?(self.routines)
         } else {
             self.currentPage = nextPage
             self.showPage?(nextPage)
@@ -77,6 +74,16 @@ final class MakingRoutineViewModel {
     
     func addRoutinePart(_ index: Int) {
         self.routines[index].items.append(RoutineItem(title: "추가염", count: 3))
+    }
+    
+    func addCount(routineIndex: Int, itemIndex: Int) {
+        guard self.routines[routineIndex].items[itemIndex].count < 100 else { return }
+        self.routines[routineIndex].items[itemIndex].count += 1
+    }
+    
+    func subCount(routineIndex: Int, itemIndex: Int) {
+        guard self.routines[routineIndex].items[itemIndex].count > 1 else { return }
+        self.routines[routineIndex].items[itemIndex].count -= 1
     }
 }
 
