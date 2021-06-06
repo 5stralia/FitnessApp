@@ -26,28 +26,43 @@ class MakingRoutineViewController: UIViewController {
         self.scrollView.frameLayoutGuide.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         
         let makingTitleView = MakingTitleView.MakingTitleView()
+        makingTitleView.viewModel = self.viewModel
         
         self.scrollView.addSubview(makingTitleView)
         makingTitleView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            self.scrollView.leadingAnchor.constraint(equalTo: makingTitleView.leadingAnchor),
-            self.scrollView.topAnchor.constraint(equalTo: makingTitleView.topAnchor),
-            self.scrollView.bottomAnchor.constraint(equalTo: makingTitleView.bottomAnchor),
+            self.scrollView.contentLayoutGuide.leadingAnchor.constraint(equalTo: makingTitleView.leadingAnchor),
+            self.scrollView.contentLayoutGuide.topAnchor.constraint(equalTo: makingTitleView.topAnchor),
+            self.scrollView.contentLayoutGuide.bottomAnchor.constraint(equalTo: makingTitleView.bottomAnchor),
             makingTitleView.heightAnchor.constraint(equalTo: self.scrollView.heightAnchor),
             makingTitleView.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor)
         ])
         
         let selectingPartView = SelectingPartView.SelectingPartView()
+        selectingPartView.viewModel = self.viewModel
         
         self.scrollView.addSubview(selectingPartView)
         selectingPartView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             selectingPartView.leadingAnchor.constraint(equalTo: makingTitleView.trailingAnchor),
             selectingPartView.topAnchor.constraint(equalTo: self.scrollView.topAnchor),
-            selectingPartView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor),
             selectingPartView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor),
             selectingPartView.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor),
             selectingPartView.heightAnchor.constraint(equalTo: self.scrollView.heightAnchor)
+        ])
+        
+        let settingRoutineView = SettingRoutineView.SettingRoutineView()
+        settingRoutineView.viewModel = self.viewModel
+        
+        self.scrollView.addSubview(settingRoutineView)
+        settingRoutineView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            settingRoutineView.leadingAnchor.constraint(equalTo: selectingPartView.trailingAnchor),
+            settingRoutineView.topAnchor.constraint(equalTo: self.scrollView.topAnchor),
+            settingRoutineView.trailingAnchor.constraint(equalTo: self.scrollView.contentLayoutGuide.trailingAnchor),
+            settingRoutineView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor),
+            settingRoutineView.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor),
+            settingRoutineView.heightAnchor.constraint(equalTo: self.scrollView.heightAnchor)
         ])
         
         self.bindViewModel()
@@ -81,7 +96,7 @@ class MakingRoutineViewController: UIViewController {
 
 extension MakingRoutineViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let progressBarRatio = scrollView.contentOffset.x / scrollView.contentSize.width
-        self.progressBarWidthConstraint.constant = (self.progressBarView.bounds.width - CGFloat(80)) * progressBarRatio
+        let progressBarRatio = scrollView.contentOffset.x / (scrollView.contentSize.width - scrollView.bounds.width)
+        self.progressBarWidthConstraint.constant = (self.progressBarView.bounds.width - CGFloat(70)) * progressBarRatio
     }
 }
