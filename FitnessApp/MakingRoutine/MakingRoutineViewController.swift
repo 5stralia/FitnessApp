@@ -19,6 +19,7 @@ class MakingRoutineViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "운동하기"
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         self.navigationItem.hidesBackButton = true
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(back))
@@ -81,6 +82,15 @@ class MakingRoutineViewController: UIViewController {
         
         viewModel.back = { [unowned self] in
             self.navigationController?.popViewController(animated: true)
+        }
+        
+        viewModel.didMakeRoutine = { [unowned self] routines in
+            guard let navigationController = self.navigationController else { return }
+            
+//            navigationController.popViewController(animated: false)
+            
+            let orderingRoutinesViewController = OrderingRoutinesViewController()
+            navigationController.pushViewController(orderingRoutinesViewController, animated: true)
         }
     }
     
