@@ -20,7 +20,8 @@ class SettingGoalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.weightGoalButton.backgroundColor = .systemGray2
+        self.weightGoalButton.setTitleColor(.white, for: .normal)
     }
 
     @IBAction func tappedWeightGoalButton(_ sender: Any) {
