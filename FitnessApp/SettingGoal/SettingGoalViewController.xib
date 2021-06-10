@@ -12,7 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingGoalViewController" customModule="FitnessApp" customModuleProvider="target">
             <connections>
+                <outlet property="firstGoalLabel" destination="826-8N-mCR" id="WTP-KZ-BXi"/>
                 <outlet property="firstTitleLabel" destination="MdQ-w8-n6R" id="rdD-v1-Bfk"/>
+                <outlet property="firstUnitLabel" destination="YbP-Ja-pSB" id="UTI-Ga-xX1"/>
+                <outlet property="secondGoalLabel" destination="DEH-dd-h0K" id="0o0-KB-evL"/>
+                <outlet property="secondTitleLabel" destination="Qe6-Da-xo4" id="T36-u6-Qfs"/>
+                <outlet property="secondUnitLabel" destination="bbP-Zo-Wi5" id="SuO-Xs-kJl"/>
                 <outlet property="steadyGoadButton" destination="KsZ-rr-7qD" id="xjI-DE-Dse"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="weightGoalButton" destination="Nii-XZ-gCl" id="lmw-wx-Wc7"/>
@@ -57,10 +62,11 @@
                             <rect key="frame" x="297" y="29.5" width="25" height="17.5"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nii-XZ-gCl">
-                            <rect key="frame" x="0.0" y="79" width="52" height="24"/>
+                            <rect key="frame" x="0.0" y="79" width="70" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="24" id="15Z-jz-CGg"/>
                             </constraints>
+                            <inset key="contentEdgeInsets" minX="9" minY="0.0" maxX="9" maxY="0.0"/>
                             <state key="normal" title="체중변화">
                                 <color key="titleColor" systemColor="systemGray2Color"/>
                             </state>
@@ -75,12 +81,16 @@
                                     <real key="value" value="12"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="tappedWeightGoalButton:" destination="-1" eventType="touchUpInside" id="YU6-0l-NWK"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsZ-rr-7qD">
-                            <rect key="frame" x="58" y="79" width="69" height="24"/>
+                            <rect key="frame" x="76" y="79" width="87" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="24" id="09P-uZ-hiQ"/>
                             </constraints>
+                            <inset key="contentEdgeInsets" minX="9" minY="0.0" maxX="9" maxY="0.0"/>
                             <state key="normal" title="꾸준한 운동">
                                 <color key="titleColor" systemColor="systemGray2Color"/>
                             </state>
@@ -95,6 +105,9 @@
                                     <real key="value" value="12"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="tappedSteadyGoalButton:" destination="-1" eventType="touchUpInside" id="tfQ-dc-6CN"/>
+                            </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuy-9l-AEm">
                             <rect key="frame" x="0.0" y="138" width="344" height="33.5"/>
@@ -206,6 +219,20 @@
                         <constraint firstItem="Nii-XZ-gCl" firstAttribute="top" secondItem="8Sv-cQ-6fv" secondAttribute="bottom" constant="35" id="tJ1-UK-BkH"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5z-1t-BkM">
+                    <rect key="frame" x="0.0" y="816" width="414" height="80"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="WFO-uL-D9R"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                    <state key="normal" title="시작하기">
+                        <color key="titleColor" name="Gray600"/>
+                    </state>
+                    <connections>
+                        <action selector="tappedDoneButton:" destination="-1" eventType="touchUpInside" id="i4d-pB-6dq"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="Gray900"/>
@@ -213,8 +240,11 @@
                 <constraint firstItem="oFK-VM-R5r" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="35" id="1Yd-Lf-8G6"/>
                 <constraint firstItem="OZq-dv-u7w" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="35" id="VeP-d9-lK4"/>
                 <constraint firstItem="oFK-VM-R5r" firstAttribute="top" secondItem="OZq-dv-u7w" secondAttribute="bottom" constant="63" id="WAa-p0-oMT"/>
+                <constraint firstAttribute="bottom" secondItem="s5z-1t-BkM" secondAttribute="bottom" id="d8C-x2-dad"/>
                 <constraint firstItem="OZq-dv-u7w" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="140" id="ewR-Po-Y3y"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oFK-VM-R5r" secondAttribute="trailing" constant="35" id="fkc-3G-Rkd"/>
+                <constraint firstItem="s5z-1t-BkM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kHv-UL-E8g"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="s5z-1t-BkM" secondAttribute="trailing" id="n7D-pp-c90"/>
             </constraints>
             <point key="canvasLocation" x="-78.260869565217391" y="73.660714285714278"/>
         </view>
@@ -222,6 +252,9 @@
     <resources>
         <image name="dumbbel_horizon" width="25" height="17.5"/>
         <image name="dumbbel_vertical" width="17.5" height="25"/>
+        <namedColor name="Gray600">
+            <color red="0.38823529411764707" green="0.38823529411764707" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Gray900">
             <color red="0.15700000524520874" green="0.15700000524520874" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

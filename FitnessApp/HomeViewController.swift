@@ -18,6 +18,11 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        if (목표 설정 안됐다면)
+        let settingGoalViewController = SettingGoalViewController()
+        settingGoalViewController.modalPresentationStyle = .fullScreen
+        self.present(settingGoalViewController, animated: false, completion: nil)
     }
 
 
