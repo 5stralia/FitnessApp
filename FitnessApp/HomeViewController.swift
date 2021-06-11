@@ -8,9 +8,13 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    @IBOutlet weak var continuingDayLabel: UILabel!
-    @IBOutlet weak var goalLabel: UILabel!
-    @IBOutlet weak var highestGoalLabel: UILabel!
+    @IBOutlet weak var goalDescriptionLabel: UILabel!
+    @IBOutlet weak var goalStatusLabel: UILabel!
+    @IBOutlet weak var initialGoadStatusLabel: UILabel!
+    @IBOutlet weak var currentGoadStatusLabel: UILabel!
+    @IBOutlet weak var finishedGoalStatusLabel: UILabel!
+    @IBOutlet weak var startDataLabel: UILabel!
+    @IBOutlet weak var tagsLabel: UILabel!
     @IBOutlet weak var todayDateLabel: UILabel!
     @IBOutlet weak var todayDescriptionLabel: UILabel!
     
@@ -18,23 +22,16 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-//        if (목표 설정 안됐다면)
         let settingGoalViewController = SettingGoalViewController()
         settingGoalViewController.modalPresentationStyle = .fullScreen
         self.present(settingGoalViewController, animated: false, completion: nil)
     }
 
-
-    @IBAction func tappedStartFitnessButton(_ sender: Any) {
-        let makingRoutineViewController = MakingRoutineViewController()
-        let makingRoutineViewModel = MakingRoutineViewModel()
-        makingRoutineViewController.viewModel = makingRoutineViewModel
-        self.navigationController?.pushViewController(makingRoutineViewController, animated: true)
-    }
-    
-    @IBAction func tappedViewRecodingButton(_ sender: Any) {
-    }
-    
 }
 

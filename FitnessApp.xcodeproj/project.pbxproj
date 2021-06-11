@@ -44,6 +44,7 @@
 		FB4340C2266C97D300F5D76E /* OrderingRoutinesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB4340C0266C97D300F5D76E /* OrderingRoutinesViewController.xib */; };
 		FBE333B726723FB60036A5B5 /* SettingGoalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE333B526723FB60036A5B5 /* SettingGoalViewController.xib */; };
 		FBE333B826723FB60036A5B5 /* SettingGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE333B626723FB60036A5B5 /* SettingGoalViewController.swift */; };
+		FBE333BA2673926F0036A5B5 /* FitnessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE333B92673926F0036A5B5 /* FitnessViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		FB4340C0266C97D300F5D76E /* OrderingRoutinesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderingRoutinesViewController.xib; sourceTree = "<group>"; };
 		FBE333B526723FB60036A5B5 /* SettingGoalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingGoalViewController.xib; sourceTree = "<group>"; };
 		FBE333B626723FB60036A5B5 /* SettingGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingGoalViewController.swift; sourceTree = "<group>"; };
+		FBE333B92673926F0036A5B5 /* FitnessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,8 +166,8 @@
 				FB43404026679E8500F5D76E /* AppDelegate.swift */,
 				FB43404226679E8500F5D76E /* SceneDelegate.swift */,
 				FB43404426679E8500F5D76E /* HomeViewController.swift */,
+				FBE333B92673926F0036A5B5 /* FitnessViewController.swift */,
 				FB43404626679E8500F5D76E /* Main.storyboard */,
-				FB43404C26679E8700F5D76E /* Assets.xcassets */,
 				FB43404E26679E8700F5D76E /* LaunchScreen.storyboard */,
 				FB43405126679E8700F5D76E /* Info.plist */,
 				FB43404926679E8500F5D76E /* FitnessApp.xcdatamodeld */,
@@ -194,6 +196,7 @@
 		FB4340732667A28D00F5D76E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				FB43404C26679E8700F5D76E /* Assets.xcassets */,
 				FB4340742667A2A200F5D76E /* Images.xcassets */,
 				FB4340762667A2AB00F5D76E /* Colors.xcassets */,
 			);
@@ -479,6 +482,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB43404B26679E8500F5D76E /* FitnessApp.xcdatamodeld in Sources */,
+				FBE333BA2673926F0036A5B5 /* FitnessViewController.swift in Sources */,
 				FB43409B266B481300F5D76E /* RoutineInfomationCell.swift in Sources */,
 				FB434082266903AD00F5D76E /* MakingTitleView.swift in Sources */,
 				FB4340A1266B493300F5D76E /* RoutinePartCell.swift in Sources */,
