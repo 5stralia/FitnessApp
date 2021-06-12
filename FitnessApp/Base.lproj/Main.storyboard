@@ -161,7 +161,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rt5-Bd-XZ0">
-                                <rect key="frame" x="10" y="394" width="394" height="394"/>
+                                <rect key="frame" x="10" y="394" width="394" height="443"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020년 7월 14일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pY-2P-Cax">
                                         <rect key="frame" x="40" y="45" width="121" height="21"/>
@@ -199,18 +199,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="홈" image="ic_home" id="RjT-Rb-7Hp"/>
                     <navigationItem key="navigationItem" title="Be Health" id="U62-bP-YR8"/>
-                    <connections>
-                        <outlet property="currentGoadStatusLabel" destination="fgC-S5-mPM" id="fL3-pe-a7B"/>
-                        <outlet property="finishedGoalStatusLabel" destination="M2C-d7-d0j" id="Bjx-dE-iFy"/>
-                        <outlet property="goalDescriptionLabel" destination="cVC-Tb-Lpo" id="NQZ-Yj-czw"/>
-                        <outlet property="goalStatusLabel" destination="dkA-dS-MSs" id="cOn-SO-S6f"/>
-                        <outlet property="initialGoadStatusLabel" destination="w6z-Jd-22b" id="k0a-Rj-Q2s"/>
-                        <outlet property="progressBarWidthConstraint" destination="FgW-Mj-Bz6" id="bis-z0-J1i"/>
-                        <outlet property="startDataLabel" destination="m9R-QN-xf7" id="zIz-7K-LWw"/>
-                        <outlet property="tagsLabel" destination="yfh-vf-c5b" id="QNz-s1-CJr"/>
-                        <outlet property="todayDateLabel" destination="2pY-2P-Cax" id="jB8-d0-Bkd"/>
-                        <outlet property="todayDescriptionLabel" destination="KUw-jJ-ycP" id="udG-xi-Y5Z"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -222,15 +210,10 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="JV8-Ht-7hm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cSV-zi-rdp">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="mu3-fz-tAA"/>
-                        <segue destination="kQn-Eg-Khr" kind="relationship" relationship="viewControllers" id="0qg-H5-gFr"/>
-                        <segue destination="6ac-7N-6RP" kind="relationship" relationship="viewControllers" id="Xip-0z-NO1"/>
-                        <segue destination="oZb-3P-fRS" kind="relationship" relationship="viewControllers" id="kSv-PF-yVg"/>
-                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OfV-S1-QLp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -279,9 +262,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6D-cO-qom">
                                 <rect key="frame" x="184" y="433" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="tappedButton:" destination="1WM-Mo-Ixp" eventType="touchUpInside" id="nJL-P2-UNS"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PzV-NG-atw"/>
@@ -308,9 +288,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="1WM-Mo-Ixp" kind="relationship" relationship="rootViewController" id="Iyn-2A-1L6"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJP-tu-40L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

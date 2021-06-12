@@ -11,7 +11,7 @@ class RoutineInformationPartCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     
     func set(title: String) {
-        self.titleLabel.text = title
+        self.titleLabel.text = "#\(title)"
     }
 
 }

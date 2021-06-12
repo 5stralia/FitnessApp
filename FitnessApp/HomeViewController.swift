@@ -20,6 +20,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
     
+    private var isSetGoal: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,9 +30,13 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let settingGoalViewController = SettingGoalViewController()
-        settingGoalViewController.modalPresentationStyle = .fullScreen
-        self.present(settingGoalViewController, animated: false, completion: nil)
+        if !self.isSetGoal {
+            let settingGoalViewController = SettingGoalViewController()
+            settingGoalViewController.modalPresentationStyle = .fullScreen
+            self.present(settingGoalViewController, animated: false, completion: nil)
+            
+            self.isSetGoal.toggle()
+        }
     }
 
 }

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AddingRoutineCell" customModule="FitnessApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="357" height="56"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="357" height="56"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Of2-9B-i5y">
+                        <rect key="frame" x="0.0" y="0.0" width="357" height="56"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8k2-V9-VR5">
+                                <rect key="frame" x="178" y="10" width="1" height="36"/>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="P6J-wO-f1r"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKM-je-kuH">
+                                <rect key="frame" x="0.0" y="0.0" width="178" height="56"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="tintColor" systemColor="systemGray4Color"/>
+                                <inset key="contentEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="새로운 운동 추가하기" image="plus.circle" catalog="system">
+                                    <color key="titleColor" systemColor="systemGray4Color"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedAddNewRoutineButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="p2u-CS-oqp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QpQ-P8-SaP">
+                                <rect key="frame" x="179" y="0.0" width="178" height="56"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="tintColor" systemColor="systemGray4Color"/>
+                                <inset key="contentEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="저장된 루틴 추가하기" image="plus.circle" catalog="system">
+                                    <color key="titleColor" systemColor="systemGray4Color"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedAddSavedRoutineButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="1pD-GF-hG6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="bKM-je-kuH" secondAttribute="bottom" id="12C-6A-drS"/>
+                            <constraint firstItem="8k2-V9-VR5" firstAttribute="leading" secondItem="bKM-je-kuH" secondAttribute="trailing" id="6cA-04-cDt"/>
+                            <constraint firstItem="QpQ-P8-SaP" firstAttribute="leading" secondItem="8k2-V9-VR5" secondAttribute="trailing" id="Asz-gP-ZYw"/>
+                            <constraint firstItem="QpQ-P8-SaP" firstAttribute="top" secondItem="Of2-9B-i5y" secondAttribute="top" id="DxV-Hd-rKD"/>
+                            <constraint firstAttribute="bottom" secondItem="QpQ-P8-SaP" secondAttribute="bottom" id="QiG-he-Z42"/>
+                            <constraint firstAttribute="bottom" secondItem="8k2-V9-VR5" secondAttribute="bottom" constant="10" id="R2w-Zx-WpQ"/>
+                            <constraint firstItem="8k2-V9-VR5" firstAttribute="centerX" secondItem="Of2-9B-i5y" secondAttribute="centerX" id="SbB-Qu-zNI"/>
+                            <constraint firstItem="bKM-je-kuH" firstAttribute="leading" secondItem="Of2-9B-i5y" secondAttribute="leading" id="aJ4-aZ-BVC"/>
+                            <constraint firstAttribute="trailing" secondItem="QpQ-P8-SaP" secondAttribute="trailing" id="bZP-Qa-X2R"/>
+                            <constraint firstItem="8k2-V9-VR5" firstAttribute="top" secondItem="Of2-9B-i5y" secondAttribute="top" constant="10" id="fG3-5g-RG1"/>
+                            <constraint firstItem="bKM-je-kuH" firstAttribute="top" secondItem="Of2-9B-i5y" secondAttribute="top" id="gVc-lb-W9t"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Of2-9B-i5y" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="IJu-zP-mjE"/>
+                <constraint firstItem="Of2-9B-i5y" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="PSP-qY-YUd"/>
+                <constraint firstAttribute="trailing" secondItem="Of2-9B-i5y" secondAttribute="trailing" id="nCi-C8-CKH"/>
+                <constraint firstAttribute="bottom" secondItem="Of2-9B-i5y" secondAttribute="bottom" id="t3b-CX-0Ee"/>
+            </constraints>
+            <size key="customSize" width="357" height="56"/>
+            <point key="canvasLocation" x="239.85507246376812" y="98.4375"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

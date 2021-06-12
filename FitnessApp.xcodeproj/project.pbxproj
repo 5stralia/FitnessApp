@@ -10,7 +10,6 @@
 		FB43404126679E8500F5D76E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43404026679E8500F5D76E /* AppDelegate.swift */; };
 		FB43404326679E8500F5D76E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43404226679E8500F5D76E /* SceneDelegate.swift */; };
 		FB43404526679E8500F5D76E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43404426679E8500F5D76E /* HomeViewController.swift */; };
-		FB43404826679E8500F5D76E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB43404626679E8500F5D76E /* Main.storyboard */; };
 		FB43404B26679E8500F5D76E /* FitnessApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB43404926679E8500F5D76E /* FitnessApp.xcdatamodeld */; };
 		FB43404D26679E8700F5D76E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB43404C26679E8700F5D76E /* Assets.xcassets */; };
 		FB43405026679E8700F5D76E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB43404E26679E8700F5D76E /* LaunchScreen.storyboard */; };
@@ -44,7 +43,12 @@
 		FB4340C2266C97D300F5D76E /* OrderingRoutinesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB4340C0266C97D300F5D76E /* OrderingRoutinesViewController.xib */; };
 		FBE333B726723FB60036A5B5 /* SettingGoalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE333B526723FB60036A5B5 /* SettingGoalViewController.xib */; };
 		FBE333B826723FB60036A5B5 /* SettingGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE333B626723FB60036A5B5 /* SettingGoalViewController.swift */; };
-		FBE333BA2673926F0036A5B5 /* FitnessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE333B92673926F0036A5B5 /* FitnessViewController.swift */; };
+		FBE333BE267472330036A5B5 /* AddingRoutineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE333BC267472330036A5B5 /* AddingRoutineCell.swift */; };
+		FBE333BF267472330036A5B5 /* AddingRoutineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE333BD267472330036A5B5 /* AddingRoutineCell.xib */; };
+		FBE333C1267482DC0036A5B5 /* FTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE333C0267482DC0036A5B5 /* FTabBarController.swift */; };
+		FBE333C3267483370036A5B5 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE333C2267483370036A5B5 /* HomeViewController.xib */; };
+		FBE333C8267488890036A5B5 /* FitnessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE333C7267488890036A5B5 /* FitnessViewController.xib */; };
+		FBE333D0267489D40036A5B5 /* FitnessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE333CF267489D40036A5B5 /* FitnessViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +73,6 @@
 		FB43404026679E8500F5D76E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB43404226679E8500F5D76E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FB43404426679E8500F5D76E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		FB43404726679E8500F5D76E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB43404A26679E8500F5D76E /* FitnessApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FitnessApp.xcdatamodel; sourceTree = "<group>"; };
 		FB43404C26679E8700F5D76E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB43404F26679E8700F5D76E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -108,7 +111,12 @@
 		FB4340C0266C97D300F5D76E /* OrderingRoutinesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderingRoutinesViewController.xib; sourceTree = "<group>"; };
 		FBE333B526723FB60036A5B5 /* SettingGoalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingGoalViewController.xib; sourceTree = "<group>"; };
 		FBE333B626723FB60036A5B5 /* SettingGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingGoalViewController.swift; sourceTree = "<group>"; };
-		FBE333B92673926F0036A5B5 /* FitnessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessViewController.swift; sourceTree = "<group>"; };
+		FBE333BC267472330036A5B5 /* AddingRoutineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingRoutineCell.swift; sourceTree = "<group>"; };
+		FBE333BD267472330036A5B5 /* AddingRoutineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddingRoutineCell.xib; sourceTree = "<group>"; };
+		FBE333C0267482DC0036A5B5 /* FTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTabBarController.swift; sourceTree = "<group>"; };
+		FBE333C2267483370036A5B5 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		FBE333C7267488890036A5B5 /* FitnessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FitnessViewController.xib; sourceTree = "<group>"; };
+		FBE333CF267489D40036A5B5 /* FitnessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,8 +174,10 @@
 				FB43404026679E8500F5D76E /* AppDelegate.swift */,
 				FB43404226679E8500F5D76E /* SceneDelegate.swift */,
 				FB43404426679E8500F5D76E /* HomeViewController.swift */,
-				FBE333B92673926F0036A5B5 /* FitnessViewController.swift */,
-				FB43404626679E8500F5D76E /* Main.storyboard */,
+				FBE333C2267483370036A5B5 /* HomeViewController.xib */,
+				FBE333CF267489D40036A5B5 /* FitnessViewController.swift */,
+				FBE333C7267488890036A5B5 /* FitnessViewController.xib */,
+				FBE333C0267482DC0036A5B5 /* FTabBarController.swift */,
 				FB43404E26679E8700F5D76E /* LaunchScreen.storyboard */,
 				FB43405126679E8700F5D76E /* Info.plist */,
 				FB43404926679E8500F5D76E /* FitnessApp.xcdatamodeld */,
@@ -266,6 +276,7 @@
 		FB434098266B47ED00F5D76E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				FBE333BB267472150036A5B5 /* AddingRoutine */,
 				FB43409E266B491F00F5D76E /* RoutineItem */,
 				FB43409D266B491000F5D76E /* RoutineInformation */,
 			);
@@ -336,6 +347,15 @@
 				FBE333B626723FB60036A5B5 /* SettingGoalViewController.swift */,
 			);
 			path = SettingGoal;
+			sourceTree = "<group>";
+		};
+		FBE333BB267472150036A5B5 /* AddingRoutine */ = {
+			isa = PBXGroup;
+			children = (
+				FBE333BC267472330036A5B5 /* AddingRoutineCell.swift */,
+				FBE333BD267472330036A5B5 /* AddingRoutineCell.xib */,
+			);
+			path = AddingRoutine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,6 +464,7 @@
 				FB4340772667A2AB00F5D76E /* Colors.xcassets in Resources */,
 				FB434084266903D900F5D76E /* MakingTitleView.xib in Resources */,
 				FB4340C2266C97D300F5D76E /* OrderingRoutinesViewController.xib in Resources */,
+				FBE333C8267488890036A5B5 /* FitnessViewController.xib in Resources */,
 				FB43405026679E8700F5D76E /* LaunchScreen.storyboard in Resources */,
 				FB4340752667A2A200F5D76E /* Images.xcassets in Resources */,
 				FB43404D26679E8700F5D76E /* Assets.xcassets in Resources */,
@@ -455,8 +476,9 @@
 				FB4340B4266B5ED900F5D76E /* RoutineInformationPartCell.xib in Resources */,
 				FB4340AF266B5BAC00F5D76E /* RoutineItemCell.xib in Resources */,
 				FB434090266B2DF200F5D76E /* SelectingPartItemCell.xib in Resources */,
+				FBE333BF267472330036A5B5 /* AddingRoutineCell.xib in Resources */,
 				FBE333B726723FB60036A5B5 /* SettingGoalViewController.xib in Resources */,
-				FB43404826679E8500F5D76E /* Main.storyboard in Resources */,
+				FBE333C3267483370036A5B5 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,7 +504,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB43404B26679E8500F5D76E /* FitnessApp.xcdatamodeld in Sources */,
-				FBE333BA2673926F0036A5B5 /* FitnessViewController.swift in Sources */,
 				FB43409B266B481300F5D76E /* RoutineInfomationCell.swift in Sources */,
 				FB434082266903AD00F5D76E /* MakingTitleView.swift in Sources */,
 				FB4340A1266B493300F5D76E /* RoutinePartCell.swift in Sources */,
@@ -495,9 +516,12 @@
 				FB43404526679E8500F5D76E /* HomeViewController.swift in Sources */,
 				FB43404126679E8500F5D76E /* AppDelegate.swift in Sources */,
 				FBE333B826723FB60036A5B5 /* SettingGoalViewController.swift in Sources */,
+				FBE333D0267489D40036A5B5 /* FitnessViewController.swift in Sources */,
 				FB43407A2667B91D00F5D76E /* UIView+layer.swift in Sources */,
 				FB434092266B31EB00F5D76E /* UIColor+CustomColor.swift in Sources */,
+				FBE333C1267482DC0036A5B5 /* FTabBarController.swift in Sources */,
 				FB4340B3266B5ED900F5D76E /* RoutineInformationPartCell.swift in Sources */,
+				FBE333BE267472330036A5B5 /* AddingRoutineCell.swift in Sources */,
 				FB43407E2669032600F5D76E /* MakingRoutineViewController.swift in Sources */,
 				FB43408F266B2DF200F5D76E /* SelectingPartItemCell.swift in Sources */,
 				FB43404326679E8500F5D76E /* SceneDelegate.swift in Sources */,
@@ -536,14 +560,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FB43404626679E8500F5D76E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FB43404726679E8500F5D76E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FB43404E26679E8700F5D76E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

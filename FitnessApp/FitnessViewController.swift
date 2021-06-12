@@ -2,7 +2,7 @@
 //  FitnessViewController.swift
 //  FitnessApp
 //
-//  Created by 최호주 on 2021/06/11.
+//  Created by 최호주 on 2021/06/12.
 //
 
 import UIKit
@@ -25,11 +25,11 @@ class FitnessViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
     @IBAction func tappedButton(_ sender: Any) {
         let makingRoutineViewController = MakingRoutineViewController()
-        let makingRoutineViewModel = MakingRoutineViewModel()
-        makingRoutineViewController.viewModel = makingRoutineViewModel
-        self.navigationController?.pushViewController(makingRoutineViewController, animated: true)
+                let makingRoutineViewModel = MakingRoutineViewModel()
+                makingRoutineViewController.viewModel = makingRoutineViewModel
+                self.navigationController?.pushViewController(makingRoutineViewController, animated: true)
     }
-    
 }
