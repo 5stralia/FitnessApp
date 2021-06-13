@@ -34,7 +34,7 @@
                             <rect key="frame" x="0.0" y="62.5" width="273" height="25.5"/>
                             <color key="textColor" name="Gray600"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
                             <connections>
                                 <action selector="didChange:" destination="iN0-l3-epB" eventType="editingChanged" id="mcI-6b-2uz"/>
                                 <outlet property="delegate" destination="iN0-l3-epB" id="vdG-S0-NiY"/>
@@ -54,7 +54,7 @@
                                 <constraint firstAttribute="width" constant="14" id="ary-i0-Jcg"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 / 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcz-7i-jup">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcz-7i-jup">
                             <rect key="frame" x="281" y="76" width="27" height="12"/>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <color key="textColor" name="Gray400"/>

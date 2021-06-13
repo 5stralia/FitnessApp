@@ -59,9 +59,10 @@ extension RoutineInfomationCell: UICollectionViewDataSource {
 extension RoutineInfomationCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if let selectedIndex = self.viewModel?.selectedParts[indexPath.row],
-           let title = self.viewModel?.parts[selectedIndex] as NSString? {
-            let textWidth = title.size(withAttributes: [.font: UIFont.systemFont(ofSize: 12, weight: .medium)]).width
-            return CGSize(width: 8 + ceil(textWidth) + 8, height: 24)
+           let title = self.viewModel?.parts[selectedIndex],
+           let tagTitle = ("#" + title) as NSString? {
+            let textWidth = tagTitle.size(withAttributes: [.font: UIFont.systemFont(ofSize: 12, weight: .medium)]).width
+            return CGSize(width: ceil(textWidth), height: 24)
         } else {
             return .zero
         }

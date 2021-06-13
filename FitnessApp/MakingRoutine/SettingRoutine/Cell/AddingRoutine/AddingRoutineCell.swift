@@ -8,6 +8,7 @@
 import UIKit
 
 class AddingRoutineCell: UICollectionViewCell {
+    var viewModel: MakingRoutineViewModel?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -15,7 +16,7 @@ class AddingRoutineCell: UICollectionViewCell {
     }
 
     @IBAction func tappedAddNewRoutineButton(_ sender: Any) {
-        
+        self.viewModel?.addRoutine()
     }
     
     @IBAction func tappedAddSavedRoutineButton(_ sender: Any) {

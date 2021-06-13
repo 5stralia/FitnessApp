@@ -8,13 +8,13 @@
 import UIKit
 
 class RoutinePartCell: UICollectionViewCell {
-    @IBOutlet weak var partTitleLabel: UILabel!
+    @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var viewModel: MakingRoutineViewModel? {
         didSet {
             if let routineIndex = self.routineIndex {
-                self.partTitleLabel.text = viewModel?.routines[routineIndex].titie
+                self.titleTextField.text = viewModel?.routines[routineIndex].titie
             }
             self.collectionView.reloadData()
         }
@@ -37,6 +37,13 @@ class RoutinePartCell: UICollectionViewCell {
             self.viewModel?.addRoutinePart(routineIndex)
         }
     }
+    
+    @IBAction func didChange(_ textField: UITextField) {
+        if let title = textField.text,
+           let routineIndex = self.routineIndex {
+            self.viewModel?.changeTitle(routineIndex, title: title)
+        }
+    }
 }
 
 extension RoutinePartCell: UICollectionViewDataSource {
@@ -50,7 +57,7 @@ extension RoutinePartCell: UICollectionViewDataSource {
         
         if let routineIndex = self.routineIndex,
            let item = self.viewModel?.routines[routineIndex].items[indexPath.row] {
-            cell.set(title: item.title, count: item.count)
+            cell.set(title: item.title,weight: item.weight, count: item.count)
             cell.viewModel = self.viewModel
             cell.routineIndex = self.routineIndex
             cell.routineItemIndex = indexPath.row
@@ -66,3 +73,6 @@ extension RoutinePartCell: UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension RoutinePartCell: UITextFieldDelegate {
+    
+}

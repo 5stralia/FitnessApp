@@ -11,11 +11,19 @@ class FTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tabBar.barTintColor = UIColor(named: "Gray900")
+        self.tabBar.tintColor = .white
+        self.tabBar.isTranslucent = false
 
         let homeViewController = HomeViewController()
         homeViewController.tabBarItem = UITabBarItem(title: "홈", image: UIImage(named: "ic_home"), tag: 0)
         
         let fitnessNavigationController = UINavigationController(rootViewController: FitnessViewController())
+        fitnessNavigationController.navigationBar.barTintColor = UIColor(named: "Gray900")
+        fitnessNavigationController.navigationBar.tintColor = .white
+        fitnessNavigationController.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        fitnessNavigationController.navigationBar.isTranslucent = false
         fitnessNavigationController.tabBarItem = UITabBarItem(title: "운동하기", image: UIImage(named: "ic_dumbbel"), tag: 1)
         
         self.viewControllers = [homeViewController, fitnessNavigationController]

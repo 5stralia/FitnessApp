@@ -22,14 +22,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DwN-IW-tKt">
                         <rect key="frame" x="10" y="0.0" width="394" height="336"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="허벅지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3I-TB-8gq">
-                                <rect key="frame" x="25" y="28" width="344" height="19.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                <color key="textColor" name="Gray600"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어떤 운동을 진행할 것인지 기록해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWM-xr-KtK">
-                                <rect key="frame" x="25" y="55.5" width="344" height="14.5"/>
+                                <rect key="frame" x="25" y="59" width="344" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" name="Gray400"/>
                                 <nil key="highlightedColor"/>
@@ -46,7 +40,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="jJN-kP-YV7">
-                                <rect key="frame" x="35" y="104" width="324" height="151"/>
+                                <rect key="frame" x="35" y="107.5" width="324" height="147.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="0.0" id="rQ9-gV-3fR">
                                     <size key="itemSize" width="128" height="128"/>
@@ -59,22 +53,30 @@
                                     <outlet property="delegate" destination="gTV-IL-0wX" id="0em-GY-W80"/>
                                 </connections>
                             </collectionView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="운동 이름을 정해주세요" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="M0b-sM-Caa">
+                                <rect key="frame" x="25" y="28" width="344" height="23"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <connections>
+                                    <action selector="didChange:" destination="gTV-IL-0wX" eventType="editingDidEnd" id="wT0-A2-yfI"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="L3I-TB-8gq" firstAttribute="top" secondItem="DwN-IW-tKt" secondAttribute="top" constant="28" id="8eg-cg-INJ"/>
+                            <constraint firstItem="M0b-sM-Caa" firstAttribute="top" secondItem="DwN-IW-tKt" secondAttribute="top" constant="28" id="35g-eK-DLE"/>
                             <constraint firstItem="Tfc-MF-fIW" firstAttribute="top" secondItem="jJN-kP-YV7" secondAttribute="bottom" constant="28" id="KIF-ZB-XUm"/>
                             <constraint firstAttribute="trailing" secondItem="Tfc-MF-fIW" secondAttribute="trailing" id="LkN-0X-gts"/>
                             <constraint firstItem="Tfc-MF-fIW" firstAttribute="leading" secondItem="DwN-IW-tKt" secondAttribute="leading" id="Lwc-Xp-ren"/>
                             <constraint firstAttribute="trailing" secondItem="jJN-kP-YV7" secondAttribute="trailing" constant="35" id="Noy-Xg-n24"/>
-                            <constraint firstAttribute="trailing" secondItem="L3I-TB-8gq" secondAttribute="trailing" constant="25" id="QPq-Nx-EC5"/>
-                            <constraint firstItem="zWM-xr-KtK" firstAttribute="top" secondItem="L3I-TB-8gq" secondAttribute="bottom" constant="8" id="Vcq-Nf-S9w"/>
                             <constraint firstAttribute="bottom" secondItem="Tfc-MF-fIW" secondAttribute="bottom" id="Z3N-FX-v7r"/>
-                            <constraint firstItem="L3I-TB-8gq" firstAttribute="leading" secondItem="DwN-IW-tKt" secondAttribute="leading" constant="25" id="aup-K9-D8v"/>
+                            <constraint firstItem="zWM-xr-KtK" firstAttribute="leading" secondItem="M0b-sM-Caa" secondAttribute="leading" id="hJm-9P-i73"/>
                             <constraint firstItem="jJN-kP-YV7" firstAttribute="leading" secondItem="DwN-IW-tKt" secondAttribute="leading" constant="35" id="hKo-a7-deE"/>
-                            <constraint firstItem="zWM-xr-KtK" firstAttribute="leading" secondItem="L3I-TB-8gq" secondAttribute="leading" id="oV4-Dr-3P8"/>
-                            <constraint firstItem="zWM-xr-KtK" firstAttribute="trailing" secondItem="L3I-TB-8gq" secondAttribute="trailing" id="qpX-3V-v6V"/>
+                            <constraint firstAttribute="trailing" secondItem="M0b-sM-Caa" secondAttribute="trailing" constant="25" id="nOb-Te-clz"/>
                             <constraint firstItem="jJN-kP-YV7" firstAttribute="top" secondItem="zWM-xr-KtK" secondAttribute="bottom" constant="34" id="qwW-lR-xwQ"/>
+                            <constraint firstItem="M0b-sM-Caa" firstAttribute="leading" secondItem="DwN-IW-tKt" secondAttribute="leading" constant="25" id="sD1-Oq-PRF"/>
+                            <constraint firstItem="zWM-xr-KtK" firstAttribute="trailing" secondItem="M0b-sM-Caa" secondAttribute="trailing" id="sHg-gr-v2P"/>
+                            <constraint firstItem="zWM-xr-KtK" firstAttribute="top" secondItem="M0b-sM-Caa" secondAttribute="bottom" constant="8" id="zn8-Np-xGb"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -89,7 +91,7 @@
             <size key="customSize" width="414" height="336"/>
             <connections>
                 <outlet property="collectionView" destination="jJN-kP-YV7" id="KVz-9i-QjY"/>
-                <outlet property="partTitleLabel" destination="L3I-TB-8gq" id="BcF-Ro-O6b"/>
+                <outlet property="titleTextField" destination="M0b-sM-Caa" id="dP0-c4-SRF"/>
             </connections>
             <point key="canvasLocation" x="395.6521739130435" y="166.74107142857142"/>
         </collectionViewCell>
@@ -103,9 +105,6 @@
         </namedColor>
         <namedColor name="Gray400">
             <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Gray600">
-            <color red="0.38823529411764707" green="0.38823529411764707" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -68,7 +68,6 @@ class MakingRoutineViewController: UIViewController {
         
         self.bindViewModel()
         
-        
     }
     
     private func bindViewModel() {
@@ -92,6 +91,18 @@ class MakingRoutineViewController: UIViewController {
             let orderingRoutinesViewController = OrderingRoutinesViewController()
             navigationController.pushViewController(orderingRoutinesViewController, animated: true)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     @IBAction func tappedNextButton(_ sender: Any) {

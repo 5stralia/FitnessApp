@@ -65,6 +65,8 @@ extension SettingRoutineView: UICollectionViewDataSource {
         } else if indexPath.row == collectionView.numberOfItems(inSection: indexPath.section) - 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.addingRoutineCellIdentifier, for: indexPath) as! AddingRoutineCell
             
+            cell.viewModel = self.viewModel
+            
             return cell
             
         } else {
@@ -87,7 +89,7 @@ extension SettingRoutineView: UICollectionViewDelegateFlowLayout {
         } else if let routine = self.viewModel?.routines[indexPath.row - 1] {
             let height = (routine.items.count * 20)
                 + ((routine.items.count > 1 ? routine.items.count - 1 : 0) * 16)
-                + 185
+                + 190
             return CGSize(width: collectionView.bounds.width, height: CGFloat(height))
         } else {
             return .zero
