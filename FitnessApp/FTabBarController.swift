@@ -26,7 +26,18 @@ class FTabBarController: UITabBarController {
         fitnessNavigationController.navigationBar.isTranslucent = false
         fitnessNavigationController.tabBarItem = UITabBarItem(title: "운동하기", image: UIImage(named: "ic_dumbbel"), tag: 1)
         
-        self.viewControllers = [homeViewController, fitnessNavigationController]
+        let recordingViewController = UIViewController()
+        recordingViewController.tabBarItem = UITabBarItem(title: "나의기록", image: UIImage(named: "ic_medal"), tag: 2)
+        
+        let settingViewController = UIViewController()
+        settingViewController.tabBarItem = UITabBarItem(title: "설정", image: UIImage(systemName: "gearshape"), tag: 3)
+        
+        self.viewControllers = [
+            homeViewController,
+            fitnessNavigationController,
+            recordingViewController,
+            settingViewController
+        ]
     }
     
 
