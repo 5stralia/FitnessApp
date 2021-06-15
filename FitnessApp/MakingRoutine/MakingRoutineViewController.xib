@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MakingRoutineViewController" customModule="FitnessApp" customModuleProvider="target">
             <connections>
+                <outlet property="bottomButton" destination="rP0-Ho-y8P" id="m8H-FT-zpL"/>
                 <outlet property="progressBarHeightConstraint" destination="fQb-Lw-aGi" id="I4C-bR-dqc"/>
                 <outlet property="progressBarView" destination="196-2v-Y0f" id="vi6-Yc-xjy"/>
                 <outlet property="progressBarWidthConstraint" destination="ad6-Wv-kEp" id="ypc-r7-2Wp"/>

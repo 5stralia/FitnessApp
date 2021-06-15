@@ -49,6 +49,12 @@
 		FBE333C3267483370036A5B5 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE333C2267483370036A5B5 /* HomeViewController.xib */; };
 		FBE333C8267488890036A5B5 /* FitnessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE333C7267488890036A5B5 /* FitnessViewController.xib */; };
 		FBE333D0267489D40036A5B5 /* FitnessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE333CF267489D40036A5B5 /* FitnessViewController.swift */; };
+		FBE333D42678D2EF0036A5B5 /* OrderingRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE333D32678D2EF0036A5B5 /* OrderingRoutineView.swift */; };
+		FBE333D62678D2F90036A5B5 /* OrderingRoutineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE333D52678D2F90036A5B5 /* OrderingRoutineView.xib */; };
+		FBE333DA2678D7010036A5B5 /* OrderingRoutineItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE333D82678D7010036A5B5 /* OrderingRoutineItemCell.swift */; };
+		FBE333DB2678D7010036A5B5 /* OrderingRoutineItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE333D92678D7010036A5B5 /* OrderingRoutineItemCell.xib */; };
+		FBE333DF2678DA9D0036A5B5 /* OrderingRoutineItemSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE333DD2678DA9D0036A5B5 /* OrderingRoutineItemSetCell.swift */; };
+		FBE333E02678DA9D0036A5B5 /* OrderingRoutineItemSetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE333DE2678DA9D0036A5B5 /* OrderingRoutineItemSetCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +123,12 @@
 		FBE333C2267483370036A5B5 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		FBE333C7267488890036A5B5 /* FitnessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FitnessViewController.xib; sourceTree = "<group>"; };
 		FBE333CF267489D40036A5B5 /* FitnessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessViewController.swift; sourceTree = "<group>"; };
+		FBE333D32678D2EF0036A5B5 /* OrderingRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderingRoutineView.swift; sourceTree = "<group>"; };
+		FBE333D52678D2F90036A5B5 /* OrderingRoutineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderingRoutineView.xib; sourceTree = "<group>"; };
+		FBE333D82678D7010036A5B5 /* OrderingRoutineItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderingRoutineItemCell.swift; sourceTree = "<group>"; };
+		FBE333D92678D7010036A5B5 /* OrderingRoutineItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderingRoutineItemCell.xib; sourceTree = "<group>"; };
+		FBE333DD2678DA9D0036A5B5 /* OrderingRoutineItemSetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderingRoutineItemSetCell.swift; sourceTree = "<group>"; };
+		FBE333DE2678DA9D0036A5B5 /* OrderingRoutineItemSetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderingRoutineItemSetCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +237,7 @@
 		FB43407B266902D500F5D76E /* MakingRoutine */ = {
 			isa = PBXGroup;
 			children = (
+				FBE333D22678D2DC0036A5B5 /* OrderingRoutine */,
 				FB434093266B442200F5D76E /* SettingRoutine */,
 				FB434085266A737400F5D76E /* SelectingPart */,
 				FB4340802669033F00F5D76E /* MakingTitle */,
@@ -358,6 +371,35 @@
 			path = AddingRoutine;
 			sourceTree = "<group>";
 		};
+		FBE333D22678D2DC0036A5B5 /* OrderingRoutine */ = {
+			isa = PBXGroup;
+			children = (
+				FBE333D72678D6D60036A5B5 /* Cell */,
+				FBE333D32678D2EF0036A5B5 /* OrderingRoutineView.swift */,
+				FBE333D52678D2F90036A5B5 /* OrderingRoutineView.xib */,
+			);
+			path = OrderingRoutine;
+			sourceTree = "<group>";
+		};
+		FBE333D72678D6D60036A5B5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FBE333DC2678DA590036A5B5 /* Cell */,
+				FBE333D82678D7010036A5B5 /* OrderingRoutineItemCell.swift */,
+				FBE333D92678D7010036A5B5 /* OrderingRoutineItemCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FBE333DC2678DA590036A5B5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FBE333DD2678DA9D0036A5B5 /* OrderingRoutineItemSetCell.swift */,
+				FBE333DE2678DA9D0036A5B5 /* OrderingRoutineItemSetCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -465,12 +507,14 @@
 				FB434084266903D900F5D76E /* MakingTitleView.xib in Resources */,
 				FB4340C2266C97D300F5D76E /* OrderingRoutinesViewController.xib in Resources */,
 				FBE333C8267488890036A5B5 /* FitnessViewController.xib in Resources */,
+				FBE333E02678DA9D0036A5B5 /* OrderingRoutineItemSetCell.xib in Resources */,
 				FB43405026679E8700F5D76E /* LaunchScreen.storyboard in Resources */,
 				FB4340752667A2A200F5D76E /* Images.xcassets in Resources */,
 				FB43404D26679E8700F5D76E /* Assets.xcassets in Resources */,
 				FB43407F2669032600F5D76E /* MakingRoutineViewController.xib in Resources */,
 				FB434097266B443C00F5D76E /* SettingRoutineView.xib in Resources */,
 				FB43409C266B481300F5D76E /* RoutineInfomationCell.xib in Resources */,
+				FBE333D62678D2F90036A5B5 /* OrderingRoutineView.xib in Resources */,
 				FB434089266A73D200F5D76E /* SelectingPartView.xib in Resources */,
 				FB4340A2266B493300F5D76E /* RoutinePartCell.xib in Resources */,
 				FB4340B4266B5ED900F5D76E /* RoutineInformationPartCell.xib in Resources */,
@@ -479,6 +523,7 @@
 				FBE333BF267472330036A5B5 /* AddingRoutineCell.xib in Resources */,
 				FBE333B726723FB60036A5B5 /* SettingGoalViewController.xib in Resources */,
 				FBE333C3267483370036A5B5 /* HomeViewController.xib in Resources */,
+				FBE333DB2678D7010036A5B5 /* OrderingRoutineItemCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +550,7 @@
 			files = (
 				FB43404B26679E8500F5D76E /* FitnessApp.xcdatamodeld in Sources */,
 				FB43409B266B481300F5D76E /* RoutineInfomationCell.swift in Sources */,
+				FBE333D42678D2EF0036A5B5 /* OrderingRoutineView.swift in Sources */,
 				FB434082266903AD00F5D76E /* MakingTitleView.swift in Sources */,
 				FB4340A1266B493300F5D76E /* RoutinePartCell.swift in Sources */,
 				FB4340AE266B5BAC00F5D76E /* RoutineItemCell.swift in Sources */,
@@ -512,6 +558,7 @@
 				FB434095266B443400F5D76E /* SettingRoutineView.swift in Sources */,
 				FB434087266A73C800F5D76E /* SelectingPartView.swift in Sources */,
 				FB43408B266A765200F5D76E /* MakingRoutineViewModel.swift in Sources */,
+				FBE333DF2678DA9D0036A5B5 /* OrderingRoutineItemSetCell.swift in Sources */,
 				FB4340C1266C97D300F5D76E /* OrderingRoutinesViewController.swift in Sources */,
 				FB43404526679E8500F5D76E /* HomeViewController.swift in Sources */,
 				FB43404126679E8500F5D76E /* AppDelegate.swift in Sources */,
@@ -525,6 +572,7 @@
 				FB43407E2669032600F5D76E /* MakingRoutineViewController.swift in Sources */,
 				FB43408F266B2DF200F5D76E /* SelectingPartItemCell.swift in Sources */,
 				FB43404326679E8500F5D76E /* SceneDelegate.swift in Sources */,
+				FBE333DA2678D7010036A5B5 /* OrderingRoutineItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

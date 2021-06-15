@@ -10,11 +10,24 @@ import UIKit
 class MakingRoutineViewController: UIViewController {
     @IBOutlet weak var progressBarView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var bottomButton: UIButton!
     
     @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var progressBarHeightConstraint: NSLayoutConstraint!
     
     var viewModel: MakingRoutineViewModel?
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        self.hidesBottomBarWhenPushed = true
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        self.hidesBottomBarWhenPushed = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,10 +73,22 @@ class MakingRoutineViewController: UIViewController {
         NSLayoutConstraint.activate([
             settingRoutineView.leadingAnchor.constraint(equalTo: selectingPartView.trailingAnchor),
             settingRoutineView.topAnchor.constraint(equalTo: self.scrollView.topAnchor),
-            settingRoutineView.trailingAnchor.constraint(equalTo: self.scrollView.contentLayoutGuide.trailingAnchor),
             settingRoutineView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor),
             settingRoutineView.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor),
             settingRoutineView.heightAnchor.constraint(equalTo: self.scrollView.heightAnchor)
+        ])
+        
+        let orderingRoutineView = OrderingRoutineView.OrderingRoutineView()
+        
+        self.scrollView.addSubview(orderingRoutineView)
+        orderingRoutineView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            orderingRoutineView.leadingAnchor.constraint(equalTo: settingRoutineView.trailingAnchor),
+            orderingRoutineView.topAnchor.constraint(equalTo: self.scrollView.topAnchor),
+            orderingRoutineView.trailingAnchor.constraint(equalTo: self.scrollView.contentLayoutGuide.trailingAnchor),
+            orderingRoutineView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor),
+            orderingRoutineView.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor),
+            orderingRoutineView.heightAnchor.constraint(equalTo: self.scrollView.heightAnchor)
         ])
         
         self.bindViewModel()
@@ -90,6 +115,10 @@ class MakingRoutineViewController: UIViewController {
             
             let orderingRoutinesViewController = OrderingRoutinesViewController()
             navigationController.pushViewController(orderingRoutinesViewController, animated: true)
+        }
+        
+        viewModel.changeBottomButtonTitle = { [unowned self] title in
+            self.bottomButton.setTitle(title, for: .normal)
         }
     }
     

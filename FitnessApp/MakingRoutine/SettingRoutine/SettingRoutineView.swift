@@ -85,7 +85,7 @@ extension SettingRoutineView: UICollectionViewDelegateFlowLayout {
         if indexPath.row == 0 {
             return CGSize(width: collectionView.bounds.width, height: 170)
         } else if indexPath.row == collectionView.numberOfItems(inSection: indexPath.section) - 1 {
-            return CGSize(width: collectionView.bounds.width - 20, height: 53)
+            return CGSize(width: collectionView.bounds.width, height: 53)
         } else if let routine = self.viewModel?.routines[indexPath.row - 1] {
             let height = (routine.items.count * 20)
                 + ((routine.items.count > 1 ? routine.items.count - 1 : 0) * 16)

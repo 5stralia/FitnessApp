@@ -15,6 +15,7 @@ final class MakingRoutineViewModel {
     var didUpdateSelectedParts: (() -> Void)?
     var didUpdateRoutines: (() -> Void)?
     var didUpdateRoutine: ((_ index: Int) -> Void)?
+    var changeBottomButtonTitle: ((_ title: String) -> Void)?
     
     var title: String = "" {
         didSet {
@@ -34,29 +35,44 @@ final class MakingRoutineViewModel {
         }
     }
     
-    private var currentPage: Int = 0
-    private let lastPage: Int = 2
+    var currentPage: Int = 0
+    let lastPage: Int = 3
     
     func next() {
         let nextPage = self.currentPage + 1
         
-        if nextPage > lastPage {
-            self.didMakeRoutine?(self.routines)
-        } else {
-            self.currentPage = nextPage
-            self.showPage?(nextPage)
-        }
-        
+        self.change(page: nextPage)
     }
     
     func prev() {
         let prevPage = self.currentPage - 1
         
-        if prevPage < 0 {
+        self.change(page: prevPage)
+    }
+    
+    private func change(page: Int) {
+        self.currentPage = page
+        
+        switch page {
+        case ..<0:
             self.back?()
-        } else {
-            self.currentPage = prevPage
-            self.showPage?(prevPage)
+            
+        case 0:
+            self.showPage?(page)
+            
+        case 1:
+            self.showPage?(page)
+            
+        case 2:
+            self.changeBottomButtonTitle?("다음")
+            self.showPage?(page)
+            
+        case self.lastPage:
+            self.changeBottomButtonTitle?("저장하고 운동하기")
+            self.showPage?(page)
+            
+        default:
+            self.didMakeRoutine?(self.routines)
         }
     }
     

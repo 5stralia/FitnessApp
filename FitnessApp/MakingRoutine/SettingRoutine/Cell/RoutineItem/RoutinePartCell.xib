@@ -20,16 +20,16 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DwN-IW-tKt">
-                        <rect key="frame" x="10" y="0.0" width="394" height="336"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="336"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어떤 운동을 진행할 것인지 기록해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWM-xr-KtK">
-                                <rect key="frame" x="25" y="59" width="344" height="14.5"/>
+                                <rect key="frame" x="25" y="59" width="364" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" name="Gray400"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tfc-MF-fIW">
-                                <rect key="frame" x="0.0" y="283" width="394" height="53"/>
+                                <rect key="frame" x="0.0" y="283" width="414" height="53"/>
                                 <color key="backgroundColor" name="Gray200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="P3C-9e-B75"/>
@@ -46,7 +46,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="jJN-kP-YV7">
-                                <rect key="frame" x="35" y="107.5" width="324" height="147.5"/>
+                                <rect key="frame" x="35" y="107.5" width="344" height="147.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="0.0" id="rQ9-gV-3fR">
                                     <size key="itemSize" width="128" height="128"/>
@@ -60,7 +60,7 @@
                                 </connections>
                             </collectionView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="운동 이름을 정해주세요" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="M0b-sM-Caa">
-                                <rect key="frame" x="25" y="28" width="344" height="23"/>
+                                <rect key="frame" x="25" y="28" width="364" height="23"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <connections>
@@ -91,8 +91,8 @@
             <constraints>
                 <constraint firstItem="DwN-IW-tKt" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Hoj-Ka-KGr"/>
                 <constraint firstAttribute="bottom" secondItem="DwN-IW-tKt" secondAttribute="bottom" id="aoj-e6-B8v"/>
-                <constraint firstItem="DwN-IW-tKt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="nwE-HL-la3"/>
-                <constraint firstAttribute="trailing" secondItem="DwN-IW-tKt" secondAttribute="trailing" constant="10" id="zT1-Dy-ayr"/>
+                <constraint firstItem="DwN-IW-tKt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="nwE-HL-la3"/>
+                <constraint firstAttribute="trailing" secondItem="DwN-IW-tKt" secondAttribute="trailing" id="zT1-Dy-ayr"/>
             </constraints>
             <size key="customSize" width="414" height="336"/>
             <connections>
