@@ -17,11 +17,7 @@ final class MakingRoutineViewModel {
     var didUpdateRoutine: ((_ index: Int) -> Void)?
     var changeBottomButtonTitle: ((_ title: String) -> Void)?
     
-    var title: String = "" {
-        didSet {
-            self.didUpdateTitle?(title)
-        }
-    }
+    var title: String = ""
     var parts: [String] = ["어깨", "가슴", "등", "하체"]
     var routines: [Routine] = [] {
         didSet {
@@ -29,11 +25,7 @@ final class MakingRoutineViewModel {
         }
     }
     
-    var selectedParts: [Int] = [] {
-        didSet {
-            self.didUpdateSelectedParts?()
-        }
-    }
+    var selectedParts: [Int] = []
     
     var currentPage: Int = 0
     let lastPage: Int = 3
@@ -64,6 +56,8 @@ final class MakingRoutineViewModel {
             self.showPage?(page)
             
         case 2:
+            self.didUpdateTitle?(title)
+            self.didUpdateSelectedParts?()
             self.changeBottomButtonTitle?("다음")
             self.showPage?(page)
             
@@ -82,8 +76,6 @@ final class MakingRoutineViewModel {
     
     func deselectPart(_ index: Int) {
         self.selectedParts = self.selectedParts.filter({ $0 != index })
-        
-//        self.routines = self.routines.filter({$0.titie != self.parts[index]})
     }
     
     func changeTitle(_ index: Int, title: String) {
