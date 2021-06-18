@@ -59,9 +59,10 @@
                                     <constraint firstAttribute="width" constant="26" id="Fkb-RM-jXs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
-                                    <action selector="didChangeCount:" destination="gTV-IL-0wX" eventType="editingDidEnd" id="G41-PA-HOh"/>
+                                    <action selector="didChangeCount:" destination="gTV-IL-0wX" eventType="editingChanged" id="VQx-Pk-mn2"/>
+                                    <outlet property="delegate" destination="gTV-IL-0wX" id="MAE-yy-fCV"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="10" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dO5-JH-HYf">
@@ -70,9 +71,10 @@
                                     <constraint firstAttribute="width" constant="26" id="6qA-zj-rwZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
-                                    <action selector="didChangeWeight:" destination="gTV-IL-0wX" eventType="editingDidEnd" id="S9f-OO-k7F"/>
+                                    <action selector="didChangeWeight:" destination="gTV-IL-0wX" eventType="editingChanged" id="xsy-3Y-shN"/>
+                                    <outlet property="delegate" destination="gTV-IL-0wX" id="JKO-kU-JCi"/>
                                 </connections>
                             </textField>
                         </subviews>

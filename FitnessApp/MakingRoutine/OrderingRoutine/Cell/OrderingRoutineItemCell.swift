@@ -13,7 +13,11 @@ class OrderingRoutineItemCell: UICollectionViewCell {
     @IBOutlet weak var arrowButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var viewModel: OrderingRoutineItemCellViewModel?
+    var viewModel: OrderingRoutineItemCellViewModel? {
+        didSet {
+            self.bindViewModel()
+        }
+    }
     
     private let cellIdentifier = "OrderingRoutineItemSetCell"
     
@@ -22,6 +26,14 @@ class OrderingRoutineItemCell: UICollectionViewCell {
         
         self.collectionView.register(UINib(nibName: self.cellIdentifier, bundle: nil),
                                      forCellWithReuseIdentifier: self.cellIdentifier)
+    }
+    
+    private func bindViewModel() {
+        guard let viewModel = self.viewModel else { return }
+        
+        self.numberLabel.text = viewModel.number
+        self.titleLabel.text = viewModel.title
+        self.collectionView.reloadData()
     }
     
 }
@@ -34,9 +46,7 @@ extension OrderingRoutineItemCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellIdentifier,
                                                       for: indexPath) as! OrderingRoutineItemSetCell
-        if let item = self.viewModel?.items[indexPath.row] {
-            cell.set(setCount: indexPath.row, weight: item.weight, count: item.count)
-        }
+        cell.viewModel = self.viewModel?.items[indexPath.row]
         
         return cell
     }

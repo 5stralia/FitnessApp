@@ -9,6 +9,7 @@ import Foundation
 
 class OrderingRoutineViewModel {
     var didUpdateRoutines: (() -> Void)?
-    
-    var routines: [Routine] = []
+     
+    var routineInfomationCellViewModel = RoutineInfomationCellViewModel()
+    var items: [OrderingRoutineItemCellViewModel] = []
 }

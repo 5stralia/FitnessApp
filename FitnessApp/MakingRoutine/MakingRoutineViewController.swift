@@ -8,6 +8,7 @@
 import UIKit
 
 class MakingRoutineViewController: UIViewController {
+    @IBOutlet weak var personImageView: UIImageView!
     @IBOutlet weak var progressBarView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var bottomButton: UIButton!
@@ -148,6 +149,11 @@ class MakingRoutineViewController: UIViewController {
 extension MakingRoutineViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let progressBarRatio = scrollView.contentOffset.x / (scrollView.contentSize.width - scrollView.bounds.width)
-        self.progressBarWidthConstraint.constant = (self.progressBarView.bounds.width - CGFloat(70)) * progressBarRatio
+        if progressBarRatio >= 1 {
+            self.personImageView.image = UIImage(named: "ic_complete_person")
+        } else {
+            self.personImageView.image = UIImage(named: "ic_running_person")
+            self.progressBarWidthConstraint.constant = (self.progressBarView.bounds.width - CGFloat(70)) * progressBarRatio
+        }
     }
 }

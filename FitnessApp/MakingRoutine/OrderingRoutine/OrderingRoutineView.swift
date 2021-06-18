@@ -44,18 +44,20 @@ class OrderingRoutineView: UIView {
 
 extension OrderingRoutineView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return  1 + (self.viewModel?.routines.count ?? 0)
+        return  1 + (self.viewModel?.items.count ?? 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.informationCellIdentifier,
                                                           for: indexPath) as! RoutineInfomationCell
+            cell.viewModel = self.viewModel?.routineInfomationCellViewModel
             
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.orderingCellIdentifier,
                                                           for: indexPath) as! OrderingRoutineItemCell
+            cell.viewModel = self.viewModel?.items[indexPath.row - 1]
             
             return cell
         }

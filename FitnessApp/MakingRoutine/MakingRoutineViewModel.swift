@@ -69,7 +69,19 @@ final class MakingRoutineViewModel {
             self.showPage?(page)
             
         case self.lastPage:
-            self.orderingRoutineViewModel.routines = self.routines
+            self.orderingRoutineViewModel.routineInfomationCellViewModel.didUpdateTitle?(self.title)
+            self.orderingRoutineViewModel.routineInfomationCellViewModel.items = self.selectedParts.map {
+                RoutineInformationPartCellViewModel(title: self.parts[$0])
+            }
+            self.orderingRoutineViewModel.items = self.routines.enumerated().map {
+                OrderingRoutineItemCellViewModel(number: String($0.offset + 1),
+                                                 title: $0.element.titie,
+                                                 items: $0.element.items.enumerated().map {
+                                                    OrderingRoutineItemSetCellViewModel(setCount: $0.offset + 1,
+                                                                                        weight: $0.element.weight,
+                                                                                        count: $0.element.count)
+                                                 })
+            }
             self.orderingRoutineViewModel.didUpdateRoutines?()
             self.changeBottomButtonTitle?("저장하고 운동하기")
             self.showPage?(page)

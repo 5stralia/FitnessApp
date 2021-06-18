@@ -25,7 +25,7 @@ class RoutinePartCellViewModel {
             RoutineItemCellViewModel(master: master,
                                      superViewModel: self,
                                      index: $0.offset,
-                                     setCount: $0.offset,
+                                     setCount: $0.offset + 1,
                                      weight: String($0.element.weight),
                                      count: String($0.element.count))
         }

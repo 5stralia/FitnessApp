@@ -12,10 +12,18 @@ class OrderingRoutineItemSetCell: UICollectionViewCell {
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
     
-    func set(setCount: Int, weight: Int, count: Int) {
-        self.setLabel.text = "\(setCount) SET"
-        self.weightLabel.text = String(weight)
-        self.countLabel.text = String(count)
+    var viewModel: OrderingRoutineItemSetCellViewModel? {
+        didSet {
+            self.bindViewModel()
+        }
+    }
+    
+    private func bindViewModel() {
+        guard let viewModel = self.viewModel else { return }
+        
+        self.setLabel.text = viewModel.setCount
+        self.weightLabel.text = viewModel.weight
+        self.countLabel.text = viewModel.count
     }
 
 }

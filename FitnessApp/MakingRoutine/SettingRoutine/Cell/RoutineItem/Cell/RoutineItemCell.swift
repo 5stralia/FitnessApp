@@ -43,3 +43,13 @@ class RoutineItemCell: UICollectionViewCell {
         }
     }
 }
+
+extension RoutineItemCell: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let _ = string.rangeOfCharacter(from: NSCharacterSet.decimalDigits) {
+            return true
+        } else {
+            return false
+        }
+    }
+}

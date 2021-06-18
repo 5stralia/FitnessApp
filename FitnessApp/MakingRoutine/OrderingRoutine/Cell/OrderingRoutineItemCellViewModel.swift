@@ -8,7 +8,7 @@
 import Foundation
 
 struct OrderingRoutineItemCellViewModel {
-    let number: Int
+    let number: String
     let title: String
-    let items: [RoutineItem]
+    let items: [OrderingRoutineItemSetCellViewModel]
 }

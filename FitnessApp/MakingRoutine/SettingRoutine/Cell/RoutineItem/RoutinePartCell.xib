@@ -64,7 +64,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <connections>
-                                    <action selector="didChange:" destination="gTV-IL-0wX" eventType="editingDidEnd" id="wT0-A2-yfI"/>
+                                    <action selector="didChange:" destination="gTV-IL-0wX" eventType="editingChanged" id="IT2-hX-lWP"/>
                                 </connections>
                             </textField>
                         </subviews>
