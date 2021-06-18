@@ -66,7 +66,7 @@ class MakingRoutineViewController: UIViewController {
         ])
         
         let settingRoutineView = SettingRoutineView.SettingRoutineView()
-        settingRoutineView.viewModel = self.viewModel
+        settingRoutineView.viewModel = self.viewModel?.settingRoutineViewModel
         
         self.scrollView.addSubview(settingRoutineView)
         settingRoutineView.translatesAutoresizingMaskIntoConstraints = false
@@ -79,6 +79,7 @@ class MakingRoutineViewController: UIViewController {
         ])
         
         let orderingRoutineView = OrderingRoutineView.OrderingRoutineView()
+        orderingRoutineView.viewModel = self.viewModel?.orderingRoutineViewModel
         
         self.scrollView.addSubview(orderingRoutineView)
         orderingRoutineView.translatesAutoresizingMaskIntoConstraints = false

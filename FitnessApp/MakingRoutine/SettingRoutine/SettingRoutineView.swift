@@ -10,7 +10,7 @@ import UIKit
 final class SettingRoutineView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var viewModel: MakingRoutineViewModel? {
+    var viewModel: SettingRoutineViewModel? {
         didSet {
             self.bindViewModel()
         }
@@ -41,39 +41,34 @@ final class SettingRoutineView: UIView {
         viewModel.didUpdateRoutines = { [unowned self] in
             self.collectionView.reloadData()
         }
-        
-        viewModel.didUpdateRoutine = { [unowned self] index in
-//            self.collectionView.collectionViewLayout.invalidateLayout()
-        }
     }
 
 }
 
 extension SettingRoutineView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1 + (self.viewModel?.routines.count ?? 0) + 1
+        return 1 + (self.viewModel?.routinePartCellViewModels.count ?? 0) + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.informationCellIndentifier,
                                                           for: indexPath) as! RoutineInfomationCell
-            cell.viewModel = self.viewModel
+            cell.viewModel = self.viewModel?.routineInfomationCellViewModel
             
             return cell
             
         } else if indexPath.row == collectionView.numberOfItems(inSection: indexPath.section) - 1 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.addingRoutineCellIdentifier, for: indexPath) as! AddingRoutineCell
-            
-            cell.viewModel = self.viewModel
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.addingRoutineCellIdentifier,
+                                                          for: indexPath) as! AddingRoutineCell
+            cell.viewModel = self.viewModel?.addingRoutineCellViewModel
             
             return cell
             
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.routineItemCellIdentifier,
                                                           for: indexPath) as! RoutinePartCell
-            cell.routineIndex = indexPath.row - 1
-            cell.viewModel = self.viewModel
+            cell.viewModel = self.viewModel?.routinePartCellViewModels[indexPath.row - 1]
             
             return cell
         }
@@ -86,7 +81,7 @@ extension SettingRoutineView: UICollectionViewDelegateFlowLayout {
             return CGSize(width: collectionView.bounds.width, height: 170)
         } else if indexPath.row == collectionView.numberOfItems(inSection: indexPath.section) - 1 {
             return CGSize(width: collectionView.bounds.width, height: 53)
-        } else if let routine = self.viewModel?.routines[indexPath.row - 1] {
+        } else if let routine = self.viewModel?.routinePartCellViewModels[indexPath.row - 1] {
             let height = (routine.items.count * 20)
                 + ((routine.items.count > 1 ? routine.items.count - 1 : 0) * 16)
                 + 190

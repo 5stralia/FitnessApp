@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB1DD760267CBF5E00C900C4 /* OrderingRoutineItemCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1DD75F267CBF5E00C900C4 /* OrderingRoutineItemCellViewModel.swift */; };
+		FB1DD762267CC0B300C900C4 /* OrderingRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1DD761267CC0B300C900C4 /* OrderingRoutineViewModel.swift */; };
+		FB1DD764267CC2C500C900C4 /* SettingRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1DD763267CC2C500C900C4 /* SettingRoutineViewModel.swift */; };
+		FB1DD766267CC38C00C900C4 /* RoutineInformationPartCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1DD765267CC38C00C900C4 /* RoutineInformationPartCellViewModel.swift */; };
+		FB1DD768267CC3F100C900C4 /* RoutineInfomationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1DD767267CC3F100C900C4 /* RoutineInfomationCellViewModel.swift */; };
+		FB1DD76A267CCB4F00C900C4 /* RoutineItemCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1DD769267CCB4F00C900C4 /* RoutineItemCellViewModel.swift */; };
+		FB1DD76C267CD59A00C900C4 /* RoutinePartCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1DD76B267CD59A00C900C4 /* RoutinePartCellViewModel.swift */; };
+		FB1DD76E267CDFE200C900C4 /* AddingRoutineCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1DD76D267CDFE200C900C4 /* AddingRoutineCellViewModel.swift */; };
 		FB43404126679E8500F5D76E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43404026679E8500F5D76E /* AppDelegate.swift */; };
 		FB43404326679E8500F5D76E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43404226679E8500F5D76E /* SceneDelegate.swift */; };
 		FB43404526679E8500F5D76E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43404426679E8500F5D76E /* HomeViewController.swift */; };
@@ -75,6 +83,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB1DD75F267CBF5E00C900C4 /* OrderingRoutineItemCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderingRoutineItemCellViewModel.swift; sourceTree = "<group>"; };
+		FB1DD761267CC0B300C900C4 /* OrderingRoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderingRoutineViewModel.swift; sourceTree = "<group>"; };
+		FB1DD763267CC2C500C900C4 /* SettingRoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRoutineViewModel.swift; sourceTree = "<group>"; };
+		FB1DD765267CC38C00C900C4 /* RoutineInformationPartCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineInformationPartCellViewModel.swift; sourceTree = "<group>"; };
+		FB1DD767267CC3F100C900C4 /* RoutineInfomationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineInfomationCellViewModel.swift; sourceTree = "<group>"; };
+		FB1DD769267CCB4F00C900C4 /* RoutineItemCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineItemCellViewModel.swift; sourceTree = "<group>"; };
+		FB1DD76B267CD59A00C900C4 /* RoutinePartCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinePartCellViewModel.swift; sourceTree = "<group>"; };
+		FB1DD76D267CDFE200C900C4 /* AddingRoutineCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingRoutineCellViewModel.swift; sourceTree = "<group>"; };
 		FB43403D26679E8500F5D76E /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB43404026679E8500F5D76E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB43404226679E8500F5D76E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -280,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				FB434098266B47ED00F5D76E /* Cell */,
+				FB1DD763267CC2C500C900C4 /* SettingRoutineViewModel.swift */,
 				FB434094266B443400F5D76E /* SettingRoutineView.swift */,
 				FB434096266B443C00F5D76E /* SettingRoutineView.xib */,
 			);
@@ -289,9 +306,9 @@
 		FB434098266B47ED00F5D76E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				FBE333BB267472150036A5B5 /* AddingRoutine */,
-				FB43409E266B491F00F5D76E /* RoutineItem */,
 				FB43409D266B491000F5D76E /* RoutineInformation */,
+				FB43409E266B491F00F5D76E /* RoutineItem */,
+				FBE333BB267472150036A5B5 /* AddingRoutine */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -300,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				FB4340B0266B5EBA00F5D76E /* Cell */,
+				FB1DD767267CC3F100C900C4 /* RoutineInfomationCellViewModel.swift */,
 				FB434099266B481300F5D76E /* RoutineInfomationCell.swift */,
 				FB43409A266B481300F5D76E /* RoutineInfomationCell.xib */,
 			);
@@ -310,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				FB4340A3266B4DE900F5D76E /* Cell */,
+				FB1DD76B267CD59A00C900C4 /* RoutinePartCellViewModel.swift */,
 				FB43409F266B493300F5D76E /* RoutinePartCell.swift */,
 				FB4340A0266B493300F5D76E /* RoutinePartCell.xib */,
 			);
@@ -319,6 +338,7 @@
 		FB4340A3266B4DE900F5D76E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				FB1DD769267CCB4F00C900C4 /* RoutineItemCellViewModel.swift */,
 				FB4340AC266B5BAC00F5D76E /* RoutineItemCell.swift */,
 				FB4340AD266B5BAC00F5D76E /* RoutineItemCell.xib */,
 			);
@@ -328,6 +348,7 @@
 		FB4340B0266B5EBA00F5D76E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				FB1DD765267CC38C00C900C4 /* RoutineInformationPartCellViewModel.swift */,
 				FB4340B1266B5ED900F5D76E /* RoutineInformationPartCell.swift */,
 				FB4340B2266B5ED900F5D76E /* RoutineInformationPartCell.xib */,
 			);
@@ -365,6 +386,7 @@
 		FBE333BB267472150036A5B5 /* AddingRoutine */ = {
 			isa = PBXGroup;
 			children = (
+				FB1DD76D267CDFE200C900C4 /* AddingRoutineCellViewModel.swift */,
 				FBE333BC267472330036A5B5 /* AddingRoutineCell.swift */,
 				FBE333BD267472330036A5B5 /* AddingRoutineCell.xib */,
 			);
@@ -375,6 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				FBE333D72678D6D60036A5B5 /* Cell */,
+				FB1DD761267CC0B300C900C4 /* OrderingRoutineViewModel.swift */,
 				FBE333D32678D2EF0036A5B5 /* OrderingRoutineView.swift */,
 				FBE333D52678D2F90036A5B5 /* OrderingRoutineView.xib */,
 			);
@@ -385,6 +408,7 @@
 			isa = PBXGroup;
 			children = (
 				FBE333DC2678DA590036A5B5 /* Cell */,
+				FB1DD75F267CBF5E00C900C4 /* OrderingRoutineItemCellViewModel.swift */,
 				FBE333D82678D7010036A5B5 /* OrderingRoutineItemCell.swift */,
 				FBE333D92678D7010036A5B5 /* OrderingRoutineItemCell.xib */,
 			);
@@ -548,10 +572,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB1DD764267CC2C500C900C4 /* SettingRoutineViewModel.swift in Sources */,
 				FB43404B26679E8500F5D76E /* FitnessApp.xcdatamodeld in Sources */,
+				FB1DD76C267CD59A00C900C4 /* RoutinePartCellViewModel.swift in Sources */,
 				FB43409B266B481300F5D76E /* RoutineInfomationCell.swift in Sources */,
+				FB1DD76E267CDFE200C900C4 /* AddingRoutineCellViewModel.swift in Sources */,
 				FBE333D42678D2EF0036A5B5 /* OrderingRoutineView.swift in Sources */,
 				FB434082266903AD00F5D76E /* MakingTitleView.swift in Sources */,
+				FB1DD76A267CCB4F00C900C4 /* RoutineItemCellViewModel.swift in Sources */,
 				FB4340A1266B493300F5D76E /* RoutinePartCell.swift in Sources */,
 				FB4340AE266B5BAC00F5D76E /* RoutineItemCell.swift in Sources */,
 				FB4340BD266C52C100F5D76E /* UICollectionViewLeftAlignedFlowLayout.swift in Sources */,
@@ -570,9 +598,13 @@
 				FB4340B3266B5ED900F5D76E /* RoutineInformationPartCell.swift in Sources */,
 				FBE333BE267472330036A5B5 /* AddingRoutineCell.swift in Sources */,
 				FB43407E2669032600F5D76E /* MakingRoutineViewController.swift in Sources */,
+				FB1DD766267CC38C00C900C4 /* RoutineInformationPartCellViewModel.swift in Sources */,
+				FB1DD760267CBF5E00C900C4 /* OrderingRoutineItemCellViewModel.swift in Sources */,
 				FB43408F266B2DF200F5D76E /* SelectingPartItemCell.swift in Sources */,
 				FB43404326679E8500F5D76E /* SceneDelegate.swift in Sources */,
 				FBE333DA2678D7010036A5B5 /* OrderingRoutineItemCell.swift in Sources */,
+				FB1DD762267CC0B300C900C4 /* OrderingRoutineViewModel.swift in Sources */,
+				FB1DD768267CC3F100C900C4 /* RoutineInfomationCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

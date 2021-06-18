@@ -11,7 +11,7 @@ class RoutineInfomationCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var viewModel: MakingRoutineViewModel? {
+    var viewModel: RoutineInfomationCellViewModel? {
         didSet {
             self.bindViewModel()
         }
@@ -41,16 +41,12 @@ class RoutineInfomationCell: UICollectionViewCell {
 
 extension RoutineInfomationCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewModel?.selectedParts.count ?? 0
+        return self.viewModel?.items.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellIdentifier, for: indexPath) as! RoutineInformationPartCell
-        
-        if let selectedIndex = self.viewModel?.selectedParts[indexPath.row],
-           let title = self.viewModel?.parts[selectedIndex] {
-            cell.set(title: title)
-        }
+        cell.viewModel = self.viewModel?.items[indexPath.row]
         
         return cell
     }
@@ -58,8 +54,7 @@ extension RoutineInfomationCell: UICollectionViewDataSource {
 
 extension RoutineInfomationCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if let selectedIndex = self.viewModel?.selectedParts[indexPath.row],
-           let title = self.viewModel?.parts[selectedIndex],
+         if let title = self.viewModel?.title(indexPath.row),
            let tagTitle = ("#" + title) as NSString? {
             let textWidth = tagTitle.size(withAttributes: [.font: UIFont.systemFont(ofSize: 12, weight: .medium)]).width
             return CGSize(width: ceil(textWidth), height: 24)

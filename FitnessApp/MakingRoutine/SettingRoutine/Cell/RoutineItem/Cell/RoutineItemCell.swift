@@ -12,32 +12,34 @@ class RoutineItemCell: UICollectionViewCell {
     @IBOutlet weak var weightTextField: UITextField!
     @IBOutlet weak var countTextField: UITextField!
     
-    var viewModel: MakingRoutineViewModel?
+    var viewModel: RoutineItemCellViewModel? {
+        didSet {
+            self.bindViewModel()
+        }
+    }
     
     var routineIndex: Int?
     var routineItemIndex: Int?
     
-    func set(title: String, weight: Int, count: Int) {
-        self.titleLabel.text = title
-        self.weightTextField.text = String(weight)
-        self.countTextField.text = String(count)
+    private func bindViewModel() {
+        guard let viewModel = self.viewModel else { return }
+        
+        self.titleLabel.text = viewModel.setCount
+        self.weightTextField.text = viewModel.weight
+        self.countTextField.text = viewModel.count
     }
     
     @IBAction func didChangeWeight(_ textField: UITextField) {
-        if let routineIndex = self.routineIndex,
-           let itemIndex = self.routineItemIndex,
-           let weightString = textField.text,
+        if let weightString = textField.text,
            let weight = Int(weightString) {
-            self.viewModel?.changeWeight(routinedIndex: routineIndex, itemIndex: itemIndex, weight: weight)
+            self.viewModel?.change(weight: weight)
         }
     }
     
     @IBAction func didChangeCount(_ textField: UITextField) {
-        if let routineIndex = self.routineIndex,
-           let itemIndex = self.routineItemIndex,
-           let countString = textField.text,
+        if let countString = textField.text,
            let count = Int(countString) {
-            self.viewModel?.changeCount(routinedIndex: routineIndex, itemIndex: itemIndex, count: count)
+            self.viewModel?.change(count: count)
         }
     }
 }

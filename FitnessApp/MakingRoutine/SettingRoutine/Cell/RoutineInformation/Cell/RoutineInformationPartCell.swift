@@ -10,8 +10,15 @@ import UIKit
 class RoutineInformationPartCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     
-    func set(title: String) {
-        self.titleLabel.text = "#\(title)"
+    var viewModel: RoutineInformationPartCellViewModel? {
+        didSet {
+            self.bindViewModel()
+        }
+    }
+    
+    private func bindViewModel() {
+        guard let viewModel = self.viewModel else { return }
+        self.titleLabel.text = "#\(viewModel.title)"
     }
 
 }

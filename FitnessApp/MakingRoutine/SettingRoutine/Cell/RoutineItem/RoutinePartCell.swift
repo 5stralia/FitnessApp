@@ -11,12 +11,9 @@ class RoutinePartCell: UICollectionViewCell {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var viewModel: MakingRoutineViewModel? {
+    var viewModel: RoutinePartCellViewModel? {
         didSet {
-            if let routineIndex = self.routineIndex {
-                self.titleTextField.text = viewModel?.routines[routineIndex].titie
-            }
-            self.collectionView.reloadData()
+            self.bindViewModel()
         }
     }
     
@@ -31,37 +28,37 @@ class RoutinePartCell: UICollectionViewCell {
         self.collectionView.register(UINib(nibName: self.cellIndentifier, bundle: nil),
                                      forCellWithReuseIdentifier: self.cellIndentifier)
     }
+    
+    private func bindViewModel() {
+        guard let viewModel = self.viewModel else { return }
+        
+        viewModel.didUpdateItems = { [unowned self] in
+            self.collectionView.reloadData()
+        }
+        
+        self.titleTextField.text = viewModel.title
+        self.collectionView.reloadData()
+    }
 
     @IBAction func tappedAddButton(_ sender: Any) {
-        if let routineIndex = self.routineIndex {
-            self.viewModel?.addRoutinePart(routineIndex)
-        }
+        self.viewModel?.addRoutinePart()
     }
     
     @IBAction func didChange(_ textField: UITextField) {
-        if let title = textField.text,
-           let routineIndex = self.routineIndex {
-            self.viewModel?.changeTitle(routineIndex, title: title)
+        if let title = textField.text {
+            self.viewModel?.change(title: title)
         }
     }
 }
 
 extension RoutinePartCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let routineIndex = self.routineIndex else { return 0 }
-        return self.viewModel?.routines[routineIndex].items.count ?? 0
+        return self.viewModel?.items.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellIndentifier, for: indexPath) as! RoutineItemCell
-        
-        if let routineIndex = self.routineIndex,
-           let item = self.viewModel?.routines[routineIndex].items[indexPath.row] {
-            cell.set(title: item.title,weight: item.weight, count: item.count)
-            cell.viewModel = self.viewModel
-            cell.routineIndex = self.routineIndex
-            cell.routineItemIndex = indexPath.row
-        }
+        cell.viewModel = self.viewModel?.items[indexPath.row]
         
         return cell
     }
@@ -71,8 +68,4 @@ extension RoutinePartCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: 20)
     }
-}
-
-extension RoutinePartCell: UITextFieldDelegate {
-    
 }

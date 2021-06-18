@@ -13,22 +13,27 @@ final class MakingRoutineViewModel {
     var didMakeRoutine: ((_ routines: [Routine]) -> Void)?
     var didUpdateTitle: ((_ title: String) -> Void)?
     var didUpdateSelectedParts: (() -> Void)?
-    var didUpdateRoutines: (() -> Void)?
+    var didUpdateRoutinesForSetting: (() -> Void)?
     var didUpdateRoutine: ((_ index: Int) -> Void)?
+    var didUpdateRoutinesForOrdering: (() -> Void)?
     var changeBottomButtonTitle: ((_ title: String) -> Void)?
+    
+    let settingRoutineViewModel: SettingRoutineViewModel
+    let orderingRoutineViewModel = OrderingRoutineViewModel()
     
     var title: String = ""
     var parts: [String] = ["어깨", "가슴", "등", "하체"]
-    var routines: [Routine] = [] {
-        didSet {
-            self.didUpdateRoutines?()
-        }
-    }
+    var routines: [Routine] = []
     
     var selectedParts: [Int] = []
     
     var currentPage: Int = 0
     let lastPage: Int = 3
+    
+    init() {
+        self.settingRoutineViewModel = SettingRoutineViewModel()
+        self.settingRoutineViewModel.addingRoutineCellViewModel = AddingRoutineCellViewModel(master: self)
+    }
     
     func next() {
         let nextPage = self.currentPage + 1
@@ -56,12 +61,16 @@ final class MakingRoutineViewModel {
             self.showPage?(page)
             
         case 2:
-            self.didUpdateTitle?(title)
-            self.didUpdateSelectedParts?()
+            self.settingRoutineViewModel.routineInfomationCellViewModel.didUpdateTitle?(self.title)
+            self.settingRoutineViewModel.routineInfomationCellViewModel.items = self.selectedParts.map {
+                RoutineInformationPartCellViewModel(title: self.parts[$0])
+            }
             self.changeBottomButtonTitle?("다음")
             self.showPage?(page)
             
         case self.lastPage:
+            self.orderingRoutineViewModel.routines = self.routines
+            self.orderingRoutineViewModel.didUpdateRoutines?()
             self.changeBottomButtonTitle?("저장하고 운동하기")
             self.showPage?(page)
             
@@ -94,6 +103,13 @@ final class MakingRoutineViewModel {
         self.routines.append(Routine(titie: "", items: [
             RoutineItem(title: "1 SET", weight: 0, count: 0)
         ]))
+        self.settingRoutineViewModel.routinePartCellViewModels = self.routines.enumerated().map {
+            RoutinePartCellViewModel(master: self,
+                                     index: $0.offset,
+                                     title: $0.element.titie,
+                                     routineItems: $0.element.items)
+        }
+        self.settingRoutineViewModel.didUpdateRoutines?()
     }
     
     
@@ -103,6 +119,13 @@ final class MakingRoutineViewModel {
            let count = self.routines[index].items.last?.count {
             self.routines[index].items.append(RoutineItem(title: "\(nextIndex) SET", weight: weight, count: count))
         }
+        self.settingRoutineViewModel.routinePartCellViewModels = self.routines.enumerated().map {
+            RoutinePartCellViewModel(master: self,
+                                     index: $0.offset,
+                                     title: $0.element.titie,
+                                     routineItems: $0.element.items)
+        }
+        self.settingRoutineViewModel.didUpdateRoutines?()
     }
 }
 

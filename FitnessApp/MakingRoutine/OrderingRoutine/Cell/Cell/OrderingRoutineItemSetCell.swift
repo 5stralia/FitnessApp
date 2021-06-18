@@ -12,9 +12,10 @@ class OrderingRoutineItemSetCell: UICollectionViewCell {
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func set(setCount: Int, weight: Int, count: Int) {
+        self.setLabel.text = "\(setCount) SET"
+        self.weightLabel.text = String(weight)
+        self.countLabel.text = String(count)
     }
 
 }

@@ -13,6 +13,8 @@ class OrderingRoutineItemCell: UICollectionViewCell {
     @IBOutlet weak var arrowButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var viewModel: OrderingRoutineItemCellViewModel?
+    
     private let cellIdentifier = "OrderingRoutineItemSetCell"
     
     override func awakeFromNib() {
@@ -21,17 +23,20 @@ class OrderingRoutineItemCell: UICollectionViewCell {
         self.collectionView.register(UINib(nibName: self.cellIdentifier, bundle: nil),
                                      forCellWithReuseIdentifier: self.cellIdentifier)
     }
-
+    
 }
 
 extension OrderingRoutineItemCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return self.viewModel?.items.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellIdentifier,
                                                       for: indexPath) as! OrderingRoutineItemSetCell
+        if let item = self.viewModel?.items[indexPath.row] {
+            cell.set(setCount: indexPath.row, weight: item.weight, count: item.count)
+        }
         
         return cell
     }

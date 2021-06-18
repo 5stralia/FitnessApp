@@ -10,6 +10,12 @@ import UIKit
 class OrderingRoutineView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var viewModel: OrderingRoutineViewModel? {
+        didSet {
+            self.bindViewModel()
+        }
+    }
+    
     private let informationCellIdentifier = "RoutineInfomationCell"
     private let orderingCellIdentifier = "OrderingRoutineItemCell"
     
@@ -25,12 +31,20 @@ class OrderingRoutineView: UIView {
         self.collectionView.register(UINib(nibName: self.orderingCellIdentifier, bundle: nil),
                                      forCellWithReuseIdentifier: self.orderingCellIdentifier)
     }
+    
+    private func bindViewModel() {
+        guard let viewModel = self.viewModel else { return }
+        
+        viewModel.didUpdateRoutines = { [unowned self] in
+            self.collectionView.reloadData()
+        }
+    }
 
 }
 
 extension OrderingRoutineView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return  1 + (self.viewModel?.routines.count ?? 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -53,7 +67,7 @@ extension OrderingRoutineView: UICollectionViewDelegateFlowLayout {
         if indexPath.row == 0 {
             return CGSize(width: collectionView.bounds.width, height: 170)
         } else {
-            return CGSize(width: collectionView.bounds.width, height: 200)
+            return CGSize(width: collectionView.bounds.width, height: 47) // FIXME: 확장 뷰 고려해서 크기 계산
         }
     }
 }
