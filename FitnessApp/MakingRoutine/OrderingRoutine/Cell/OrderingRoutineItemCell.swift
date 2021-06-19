@@ -33,9 +33,23 @@ class OrderingRoutineItemCell: UICollectionViewCell {
         
         self.numberLabel.text = viewModel.number
         self.titleLabel.text = viewModel.title
+        self.collectionView.isHidden = viewModel.isHiddenItems
         self.collectionView.reloadData()
     }
     
+    @IBAction func tappedArrowButton(_ sender: Any) {
+        guard let isHiddenItems = self.viewModel?.isHiddenItems else { return }
+        
+        if isHiddenItems {
+            self.arrowButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
+            self.collectionView.isHidden = true
+        } else {
+            self.arrowButton.setImage(UIImage(systemName: "chevron.up"), for: .normal)
+            self.collectionView.isHidden = false
+        }
+        
+        self.viewModel?.toggle()
+    }
 }
 
 extension OrderingRoutineItemCell: UICollectionViewDataSource {

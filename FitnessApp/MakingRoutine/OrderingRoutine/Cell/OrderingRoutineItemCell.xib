@@ -49,6 +49,9 @@
                                                     <constraint firstAttribute="width" secondItem="GBt-Sc-bu0" secondAttribute="height" id="xGj-Mz-hPP"/>
                                                 </constraints>
                                                 <state key="normal" image="chevron.down" catalog="system"/>
+                                                <connections>
+                                                    <action selector="tappedArrowButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="dMk-n4-AKy"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -65,11 +68,11 @@
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="FXc-9d-bZR">
                                         <rect key="frame" x="0.0" y="46" width="414" height="172"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kfA-C6-tvb">
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="kfA-C6-tvb">
                                             <size key="itemSize" width="128" height="128"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                                         </collectionViewFlowLayout>
                                         <connections>
                                             <outlet property="dataSource" destination="gTV-IL-0wX" id="muG-mg-e3M"/>

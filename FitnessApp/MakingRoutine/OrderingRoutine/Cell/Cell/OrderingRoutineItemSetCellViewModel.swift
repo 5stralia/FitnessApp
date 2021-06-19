@@ -14,7 +14,7 @@ class OrderingRoutineItemSetCellViewModel {
     
     init(setCount: Int, weight: Int, count: Int) {
         self.setCount = "\(setCount) SET"
-        self.weight = String(weight)
-        self.count = String(count)
+        self.weight = "\(weight) 개"
+        self.count = "\(count) 개"
     }
 }

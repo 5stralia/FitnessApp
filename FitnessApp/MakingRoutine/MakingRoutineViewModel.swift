@@ -74,7 +74,8 @@ final class MakingRoutineViewModel {
                 RoutineInformationPartCellViewModel(title: self.parts[$0])
             }
             self.orderingRoutineViewModel.items = self.routines.enumerated().map {
-                OrderingRoutineItemCellViewModel(number: String($0.offset + 1),
+                OrderingRoutineItemCellViewModel(index: $0.offset,
+                                                 number: String($0.offset + 1),
                                                  title: $0.element.titie,
                                                  items: $0.element.items.enumerated().map {
                                                     OrderingRoutineItemSetCellViewModel(setCount: $0.offset + 1,

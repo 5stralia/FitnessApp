@@ -30,6 +30,10 @@ class OrderingRoutineView: UIView {
                                      forCellWithReuseIdentifier: self.informationCellIdentifier)
         self.collectionView.register(UINib(nibName: self.orderingCellIdentifier, bundle: nil),
                                      forCellWithReuseIdentifier: self.orderingCellIdentifier)
+        
+        self.collectionView.dragInteractionEnabled = true
+        self.collectionView.dragDelegate = self
+        self.collectionView.dropDelegate = self
     }
     
     private func bindViewModel() {
@@ -37,6 +41,10 @@ class OrderingRoutineView: UIView {
         
         viewModel.didUpdateRoutines = { [unowned self] in
             self.collectionView.reloadData()
+        }
+        
+        viewModel.didToggle = { [unowned self] index in
+            self.collectionView.reloadItems(at: [IndexPath(row: index + 1, section: 0)])
         }
     }
 
@@ -69,8 +77,59 @@ extension OrderingRoutineView: UICollectionViewDelegateFlowLayout {
         if indexPath.row == 0 {
             return CGSize(width: collectionView.bounds.width, height: 170)
         } else {
-            return CGSize(width: collectionView.bounds.width, height: 47) // FIXME: 확장 뷰 고려해서 크기 계산
+            let height = self.viewModel?.items[indexPath.row - 1].height
+            return CGSize(width: collectionView.bounds.width, height: CGFloat(height ?? 0))
         }
     }
 }
 
+extension OrderingRoutineView: UICollectionViewDragDelegate {
+    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        guard indexPath.row != 0,
+              let title = self.viewModel?.items[indexPath.row - 1].title
+        else {
+            return []
+        }
+        
+        let item = NSItemProvider(object: title as NSString)
+        let dragItem = UIDragItem(itemProvider: item)
+        
+        return [dragItem]
+    }
+    
+}
+
+extension OrderingRoutineView: UICollectionViewDropDelegate {
+    func collectionView(_ collectionView: UICollectionView, canHandle session: UIDropSession) -> Bool {
+        return true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
+        guard let destinationIndexPath = coordinator.destinationIndexPath,
+              destinationIndexPath.row != 0
+        else {
+            return
+        }
+        
+        coordinator.items.forEach { item in
+            guard let sourceIndexPath = item.sourceIndexPath else { return }
+            
+            self.viewModel?.move(from: sourceIndexPath.row - 1, to: destinationIndexPath.row - 1)
+            
+            collectionView.performBatchUpdates {
+                collectionView.deleteItems(at: [sourceIndexPath])
+                collectionView.insertItems(at: [destinationIndexPath])
+            } completion: { _ in
+                coordinator.drop(item.dragItem, toItemAt: destinationIndexPath).addCompletion { _ in
+                    collectionView.reloadData()
+                }
+            }
+
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
+        return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
+    }
+    
+}

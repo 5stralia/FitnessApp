@@ -30,14 +30,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999 개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nmb-QU-kK0">
-                                <rect key="frame" x="359.5" y="17" width="39.5" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999 개" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nmb-QU-kK0">
+                                <rect key="frame" x="345" y="17" width="40" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="lJk-XY-eLj"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wdY-vH-AGB">
-                                <rect key="frame" x="350.5" y="20" width="1" height="10"/>
+                                <rect key="frame" x="336" y="20" width="1" height="10"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="1" id="BJO-si-scZ"/>
@@ -45,8 +48,9 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999 KG" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daE-J2-9Tu">
-                                <rect key="frame" x="296.5" y="17" width="46" height="16"/>
+                                <rect key="frame" x="282" y="17" width="46" height="16"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="B6p-kx-uFg"/>
                                     <constraint firstAttribute="width" constant="46" id="cqC-Z7-WIf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -54,12 +58,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gPg-Bn-kk8" firstAttribute="leading" secondItem="K6g-aF-Oyu" secondAttribute="leading" constant="99" id="0HJ-FK-j14"/>
                             <constraint firstItem="Nmb-QU-kK0" firstAttribute="leading" secondItem="wdY-vH-AGB" secondAttribute="trailing" constant="8" id="3Rx-BF-Z4S"/>
                             <constraint firstItem="gPg-Bn-kk8" firstAttribute="centerY" secondItem="K6g-aF-Oyu" secondAttribute="centerY" id="B0C-5u-m3c"/>
-                            <constraint firstAttribute="trailing" secondItem="Nmb-QU-kK0" secondAttribute="trailing" constant="16" id="Nga-4W-PVk"/>
+                            <constraint firstAttribute="trailing" secondItem="Nmb-QU-kK0" secondAttribute="trailing" constant="30" id="Nga-4W-PVk"/>
                             <constraint firstItem="Nmb-QU-kK0" firstAttribute="centerY" secondItem="K6g-aF-Oyu" secondAttribute="centerY" id="PxD-Gd-k8U"/>
                             <constraint firstItem="wdY-vH-AGB" firstAttribute="leading" secondItem="daE-J2-9Tu" secondAttribute="trailing" constant="8" id="V3B-pw-PfH"/>
                             <constraint firstItem="wdY-vH-AGB" firstAttribute="centerY" secondItem="K6g-aF-Oyu" secondAttribute="centerY" id="WuX-xo-8EC"/>
@@ -85,9 +89,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
