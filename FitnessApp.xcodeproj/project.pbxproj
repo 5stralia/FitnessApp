@@ -16,6 +16,7 @@
 		FB1DD76C267CD59A00C900C4 /* RoutinePartCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1DD76B267CD59A00C900C4 /* RoutinePartCellViewModel.swift */; };
 		FB1DD76E267CDFE200C900C4 /* AddingRoutineCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1DD76D267CDFE200C900C4 /* AddingRoutineCellViewModel.swift */; };
 		FB1DD770267CED3900C900C4 /* OrderingRoutineItemSetCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1DD76F267CED3900C900C4 /* OrderingRoutineItemSetCellViewModel.swift */; };
+		FB1DD772267F167D00C900C4 /* OrderingRoutineSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1DD771267F167D00C900C4 /* OrderingRoutineSection.swift */; };
 		FB43404126679E8500F5D76E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43404026679E8500F5D76E /* AppDelegate.swift */; };
 		FB43404326679E8500F5D76E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43404226679E8500F5D76E /* SceneDelegate.swift */; };
 		FB43404526679E8500F5D76E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43404426679E8500F5D76E /* HomeViewController.swift */; };
@@ -93,6 +94,7 @@
 		FB1DD76B267CD59A00C900C4 /* RoutinePartCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinePartCellViewModel.swift; sourceTree = "<group>"; };
 		FB1DD76D267CDFE200C900C4 /* AddingRoutineCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingRoutineCellViewModel.swift; sourceTree = "<group>"; };
 		FB1DD76F267CED3900C900C4 /* OrderingRoutineItemSetCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderingRoutineItemSetCellViewModel.swift; sourceTree = "<group>"; };
+		FB1DD771267F167D00C900C4 /* OrderingRoutineSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderingRoutineSection.swift; sourceTree = "<group>"; };
 		FB43403D26679E8500F5D76E /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB43404026679E8500F5D76E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB43404226679E8500F5D76E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 				FB1DD761267CC0B300C900C4 /* OrderingRoutineViewModel.swift */,
 				FBE333D32678D2EF0036A5B5 /* OrderingRoutineView.swift */,
 				FBE333D52678D2F90036A5B5 /* OrderingRoutineView.xib */,
+				FB1DD771267F167D00C900C4 /* OrderingRoutineSection.swift */,
 			);
 			path = OrderingRoutine;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB1DD772267F167D00C900C4 /* OrderingRoutineSection.swift in Sources */,
 				FB1DD764267CC2C500C900C4 /* SettingRoutineViewModel.swift in Sources */,
 				FB43404B26679E8500F5D76E /* FitnessApp.xcdatamodeld in Sources */,
 				FB1DD76C267CD59A00C900C4 /* RoutinePartCellViewModel.swift in Sources */,

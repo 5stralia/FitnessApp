@@ -10,7 +10,7 @@ import Foundation
 class SettingRoutineViewModel {
     var didUpdateRoutines: (() -> Void)?
     
-    let routineInfomationCellViewModel = RoutineInfomationCellViewModel()
+    let routineInfomationCellViewModel = RoutineInfomationCellViewModel(title: "", items: [])
     var routinePartCellViewModels: [RoutinePartCellViewModel] = []
     var addingRoutineCellViewModel: AddingRoutineCellViewModel! = nil
 }

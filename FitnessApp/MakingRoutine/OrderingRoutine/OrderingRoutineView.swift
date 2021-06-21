@@ -51,50 +51,66 @@ class OrderingRoutineView: UIView {
 }
 
 extension OrderingRoutineView: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return self.viewModel?.items.count ?? 0
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return  1 + (self.viewModel?.items.count ?? 0)
+        return self.viewModel?.items[section].items.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.informationCellIdentifier,
-                                                          for: indexPath) as! RoutineInfomationCell
-            cell.viewModel = self.viewModel?.routineInfomationCellViewModel
-            
-            return cell
+        if let item = self.viewModel?.items[indexPath.section].items[indexPath.row] {
+            switch item {
+            case .informationItem(let cellViewModel):
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.informationCellIdentifier,
+                                                              for: indexPath) as! RoutineInfomationCell
+                cell.viewModel = cellViewModel
+                
+                return cell
+                
+            case .routineItem(let cellViewModel):
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.orderingCellIdentifier,
+                                                              for: indexPath) as! OrderingRoutineItemCell
+                cell.viewModel = cellViewModel
+                
+                return cell
+                
+            }
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.orderingCellIdentifier,
-                                                          for: indexPath) as! OrderingRoutineItemCell
-            cell.viewModel = self.viewModel?.items[indexPath.row - 1]
-            
-            return cell
+            fatalError("OrderingRoutineView cellForItemAt")
         }
     }
 }
 
 extension OrderingRoutineView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.row == 0 {
+        guard let item = self.viewModel?.items[indexPath.section].items[indexPath.row] else { return .zero }
+        
+        switch item {
+        case .informationItem:
             return CGSize(width: collectionView.bounds.width, height: 170)
-        } else {
-            let height = self.viewModel?.items[indexPath.row - 1].height
-            return CGSize(width: collectionView.bounds.width, height: CGFloat(height ?? 0))
+            
+        case .routineItem(let cellViewModel):
+            return CGSize(width: collectionView.bounds.width, height: CGFloat(cellViewModel.height))
         }
     }
 }
 
 extension OrderingRoutineView: UICollectionViewDragDelegate {
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
-        guard indexPath.row != 0,
-              let title = self.viewModel?.items[indexPath.row - 1].title
-        else {
+        guard let item = self.viewModel?.items[indexPath.section].items[indexPath.row] else { return [] }
+        
+        switch item {
+        case .routineItem(let cellViewModel):
+            let itemProvider = NSItemProvider(object: cellViewModel.title as NSString)
+            let dragItem = UIDragItem(itemProvider: itemProvider)
+            
+            return [dragItem]
+            
+        default:
             return []
         }
-        
-        let item = NSItemProvider(object: title as NSString)
-        let dragItem = UIDragItem(itemProvider: item)
-        
-        return [dragItem]
     }
     
 }
@@ -106,27 +122,50 @@ extension OrderingRoutineView: UICollectionViewDropDelegate {
     
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
         guard let destinationIndexPath = coordinator.destinationIndexPath,
-              destinationIndexPath.row != 0
-        else {
-            return
-        }
+              let sectionItem = self.viewModel?.items[destinationIndexPath.section]
+        else { return }
         
-        coordinator.items.forEach { item in
-            guard let sourceIndexPath = item.sourceIndexPath else { return }
+        switch sectionItem {
+        case .information:
+            return
             
-            self.viewModel?.move(from: sourceIndexPath.row - 1, to: destinationIndexPath.row - 1)
-            
-            collectionView.performBatchUpdates {
-                collectionView.deleteItems(at: [sourceIndexPath])
-                collectionView.insertItems(at: [destinationIndexPath])
-            } completion: { _ in
-                coordinator.drop(item.dragItem, toItemAt: destinationIndexPath).addCompletion { _ in
-                    collectionView.reloadData()
+        case .routines(let items):
+            let item = items[destinationIndexPath.row]
+            switch item {
+            case .routineItem:
+                coordinator.items.forEach { item in
+                    guard let sourceIndexPath = item.sourceIndexPath else { return }
+                    
+                    self.move(collectionView,
+                              performDropWith: coordinator,
+                              item: item,
+                              from: sourceIndexPath,
+                              to: destinationIndexPath)
                 }
+                
+            default:
+                return
             }
-
         }
     }
+    
+    private func move(_ collectionView: UICollectionView,
+                      performDropWith coordinator: UICollectionViewDropCoordinator,
+                      item: UICollectionViewDropItem,
+                      from: IndexPath,
+                      to: IndexPath) {
+        self.viewModel?.move(from: from.row, to: to.row)
+        
+        collectionView.performBatchUpdates {
+            collectionView.deleteItems(at: [from])
+            collectionView.insertItems(at: [to])
+        } completion: { _ in
+            coordinator.drop(item.dragItem, toItemAt: to).addCompletion { _ in
+                collectionView.reloadData()
+            }
+        }
+    }
+
     
     func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
         return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)

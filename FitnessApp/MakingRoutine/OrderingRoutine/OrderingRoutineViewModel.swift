@@ -11,22 +11,39 @@ class OrderingRoutineViewModel {
     var didUpdateRoutines: (() -> Void)?
     var didToggle:((_ index: Int) -> Void)?
      
-    var routineInfomationCellViewModel = RoutineInfomationCellViewModel()
-    var items: [OrderingRoutineItemCellViewModel] = [] {
-        didSet {
-            self.items.enumerated().forEach {
-                $0.element.superViewModel = self
-                $0.element.number = String($0.offset + 1)
-            }
-        }
-    }
+    var items: [OrderingRoutineSection] = []
     
     func toggle(index: Int) {
         self.didToggle?(index)
     }
     
     func move(from: Int, to: Int) {
-        let item = self.items.remove(at: from)
-        self.items.insert(item, at: to)
+        self.items = self.items.map { item in
+            switch item {
+            case .routines(let routineItems):
+                var movedItems = routineItems
+                
+                let movingitem = movedItems.remove(at: from)
+                movedItems.insert(movingitem, at: to)
+                
+                movedItems = movedItems.enumerated().map {
+                    switch $0.element {
+                    case .routineItem(let cellViewModel):
+                        return .routineItem(cellViewModel: OrderingRoutineItemCellViewModel(index: cellViewModel.index,
+                                                                                        number: String($0.offset + 1),
+                                                                                        title: cellViewModel.title,
+                                                                                        items: cellViewModel.items))
+                        
+                    default:
+                        return $0.element
+                    }
+                }
+                
+                return .routines(items: movedItems)
+                
+            default:
+                return item
+            }
+        }
     }
 }

@@ -11,10 +11,20 @@ class RoutineInfomationCellViewModel {
     var didUpdateTitle: ((_ title: String) -> Void)?
     var didUpdateSelectedParts: (() -> Void)?
     
-    var items: [RoutineInformationPartCellViewModel] = [] {
+    var title: String {
+        didSet {
+            self.didUpdateTitle?(title)
+        }
+    }
+    var items: [RoutineInformationPartCellViewModel]{
         didSet {
             self.didUpdateSelectedParts?()
         }
+    }
+    
+    init(title: String, items: [RoutineInformationPartCellViewModel]) {
+        self.title = title
+        self.items = items
     }
     
     func title(_ index: Int) -> String {

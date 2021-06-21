@@ -33,10 +33,10 @@
                             <rect key="frame" x="35" y="18" width="344" height="42"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qn0-1d-QUs">
-                                    <rect key="frame" x="0.0" y="16" width="344" height="18"/>
+                                    <rect key="frame" x="0.0" y="24" width="344" height="10"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xSq-Sv-9gI">
-                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="18"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="10"/>
                                             <color key="backgroundColor" name="Gray600"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" id="ad6-Wv-kEp"/>
@@ -51,7 +51,7 @@
                                     <color key="backgroundColor" name="Gray200"/>
                                     <constraints>
                                         <constraint firstItem="xSq-Sv-9gI" firstAttribute="top" secondItem="Qn0-1d-QUs" secondAttribute="top" id="LZs-9J-ITd"/>
-                                        <constraint firstAttribute="height" constant="18" id="Nlu-lN-30d"/>
+                                        <constraint firstAttribute="height" constant="10" id="Nlu-lN-30d"/>
                                         <constraint firstAttribute="bottom" secondItem="xSq-Sv-9gI" secondAttribute="bottom" id="WNy-fM-Rxr"/>
                                         <constraint firstItem="xSq-Sv-9gI" firstAttribute="leading" secondItem="Qn0-1d-QUs" secondAttribute="leading" id="uqS-wh-4fm"/>
                                     </constraints>
